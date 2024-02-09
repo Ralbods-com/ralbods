@@ -1,0 +1,7 @@
+title: "今日の日付を入力"
+labels: [""]
+body:
+  - type: textarea
+    attributes:
+      label: 議事録
+      value: "# 定例\n## 日時\nyyyy/mm/dd hh:mm〜hh:mm\n\n## 出席者\n- \n\n## 進捗報告\n### のぞみ\n- \n\n次までにすること\n- \n\n### いのれん\n- \n\n次までにすること\n- \n\n## 共有事項\n\n\n## 決定事項\n- 決定事項1\n      \n"
