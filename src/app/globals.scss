@@ -6,7 +6,21 @@
   // color
   --primary-pink: 254, 81, 150;
   --primary-sub-pink: 247, 112, 98;
+
+  --pale-gray: 242, 242, 242;
+
+  --text-color: 0, 0, 0;
+  // gradation
+  --main-gradient: linear-gradient(135deg, rgba(254,81,150,1) 0%, rgba(247,112,98,1) 100%);
   // width, height
+}
+
+:root[theme='dark'] {
+  --text-color: 0, 0, 0;
+}
+
+:root[theme='light'] {
+  --text-color: 0, 0, 0;
 }
 
 * {
@@ -19,6 +33,7 @@ html,
 body {
   max-width: 100vw;
   min-height: 100vh;
+  color: rgb(var(--text-color));
 }
 
 a {
