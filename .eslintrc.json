@@ -8,7 +8,9 @@
   "rules": {
     "no-console": "warn", // console.log is warn
     "react/react-in-jsx-scope": "off",
-    "@typescript-eslint/dot-notation": "off"
+    "@typescript-eslint/dot-notation": "off",
+    "jsx-quotes": "off",
+    "import/no-extraneous-dependencies": "off"
   },
   "parserOptions": {
     "project": "./tsconfig.json"
