@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { FaGithub, FaXTwitter } from 'react-icons/fa6';
 import styles from './footer.module.scss';
-import ColorThemeToggleButton from '../ui/button/Theme/ColorThemeToggleButton';
+import ColorThemeToggle from '../ui/toggle/theme/ColorThemeToggle';
 
 export default function Footer() {
   return (
@@ -25,7 +25,10 @@ export default function Footer() {
               使い方
             </Link>
             <Link href='/home' className={styles['content-text']}>
-              サポート
+              ガイドライン
+            </Link>
+            <Link href='/home' className={styles['content-text']}>
+              タグ一覧
             </Link>
           </div>
           <div className={styles['content-box']}>
@@ -64,7 +67,7 @@ export default function Footer() {
             </a>
           </div>
         </div>
-        <ColorThemeToggleButton />
+        <ColorThemeToggle />
       </div>
     </footer>
   );
