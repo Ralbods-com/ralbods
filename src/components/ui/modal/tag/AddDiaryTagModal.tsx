@@ -51,9 +51,9 @@ export default function AddDiaryTagModal({
     key: string;
   }) => {
     if (
-      (e.key === 'Backspace' || (e.ctrlKey && e.key === 'h')) &&
-      inputVal.trim() === '' &&
-      tags.length > 0
+      (e.key === 'Backspace' || (e.ctrlKey && e.key === 'h'))
+      && inputVal.trim() === ''
+      && tags.length > 0
     ) {
       setTags(tags.slice(0, -1));
     }

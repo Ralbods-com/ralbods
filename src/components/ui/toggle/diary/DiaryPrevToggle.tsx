@@ -42,11 +42,11 @@ export default function DiaryPrevToggle({
         style={
           isPrev
             ? {
-                backgroundColor: 'rgb(var(--primary-pink))',
-              }
+              backgroundColor: 'rgb(var(--primary-pink))',
+            }
             : {
-                backgroundColor: 'rgb(var(--pale-gray-2))',
-              }
+              backgroundColor: 'rgb(var(--pale-gray-2))',
+            }
         }
       />
       <div
