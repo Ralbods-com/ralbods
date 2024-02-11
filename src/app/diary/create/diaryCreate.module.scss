@@ -1,0 +1,10 @@
+.all-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: rgb(var(--pale-colored-background-color));
+  position: relative;
+}

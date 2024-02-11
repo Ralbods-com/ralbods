@@ -1,0 +1,21 @@
+.container {
+  width: 100%;
+  min-height: 3rem;
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  background-color: rgb(var(--background-color));
+  border-top: 1px solid rgba(var(--pale-text-color), 0.2);
+}
+
+.md-menu-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
