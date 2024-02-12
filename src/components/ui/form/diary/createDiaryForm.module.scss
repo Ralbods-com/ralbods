@@ -1,0 +1,11 @@
+.form-container {
+  width: 100%;
+  position: relative;
+}
+
+.textarea {
+  width: 100%;
+  height: auto;
+  min-height: var(--form-min-height);
+  resize: none;
+}

@@ -1,0 +1,45 @@
+@mixin button() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem;
+  border-radius: 100vh;
+  font-size: 1.1rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.md-button {
+  @include button();
+  background-color: rgb(var(--pale-gray));
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: rgba(var(--primary-pink), 0.1);
+    }
+  }
+}
+
+.menu-button {
+  @include button();
+  color: rgb(var(--pale-text-color));
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: rgba(var(--primary-pink), 0.1);
+    }
+  }
+}
+
+.hover-button {
+  width: calc(var(--prev-toggle-circle-width) + 0.4rem);
+  height: auto;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  background-color: rgb(var(--pale-gray));
+  border-radius: 100vh;
+  box-shadow: var(--drop-shadow);
+  position: relative;
+  cursor: pointer;
+}

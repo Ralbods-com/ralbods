@@ -6,13 +6,43 @@
   // color
   --primary-pink: 254, 81, 150;
   --primary-sub-pink: 247, 112, 98;
+  --white: 255, 255, 255;
+
+  --primary-pink-hover: 244, 81, 130;
 
   --pale-gray: 242, 242, 242;
+  --pale-gray-2: 220, 220, 220;
 
-  --text-color: 0, 0, 0;
+  --dark-gray: 115, 76, 86;
+
+  --yellow: 255, 204, 51;
+  --red: 255, 102, 102;
+
+  --text-color: 90, 90, 90;
+  --pale-text-color: 128, 128, 128;
+  --shadow-color: 0, 0, 0;
+  --background-color: 255, 255, 255;
+  --pale-background-color: 242, 242, 242;
+  --pale-colored-background-color: 255, 240, 240;
+
+  --drop-shadow: 0 2px 4px rgba(var(--text-color), 0.1), 0 4px 8px rgba(var(--text-color), 0.1);
+  --drop-shadow-pink: 0 2px 4px rgba(var(--primary-pink), 0.1), 0 4px 8px rgba(var(--primary-pink), 0.1);
   // gradation
   --main-gradient: linear-gradient(135deg, rgba(254,81,150,1) 0%, rgba(247,112,98,1) 100%);
   // width, height
+  --prev-toggle-circle-width: 2.5rem;
+  --prev-toggle-padding: 0.2rem;
+  --form-min-height: 30rem;
+  --form-header-height: 3.1rem;
+
+  // padding
+  --form-side-padding: 0.5rem;
+  @media screen and (min-width: 751px) {
+    --form-side-padding: 2.5rem;
+  }
+  @media screen and (min-width: 601px) {
+    --form-side-padding: 1rem;
+  }
 }
 
 :root[theme='dark'] {
@@ -21,6 +51,24 @@
 
 :root[theme='light'] {
   --text-color: 0, 0, 0;
+}
+
+@media screen and (max-width: 600px) {
+  html {
+      font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1200px) {
+  html {
+      font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 1601px) {
+  html {
+      font-size: 18px;
+  }
 }
 
 * {
@@ -39,4 +87,121 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+input {
+  font-size: 16px;
+  color: rgb(var(--text-color));
+  background-color: inherit;
+  border: none;
+  outline: none;
+}
+
+textarea {
+  font-size: 16px;
+  color: rgb(var(--text-color));
+  background-color: inherit;
+  border: none;
+  outline: none;
+}
+
+.md-container {
+  width: 100%;
+  height: auto;
+  min-height: var(--form-min-height);
+  line-height: 1.9;
+  >:first-child {
+    margin-top: 0;
+  }
+}
+
+.md-container a {
+  color: rgb(var(--primary-pink));
+  font-weight: 600;
+}
+
+.md-container h1 {
+  width: 100%;
+  margin-top: 2em;
+  margin-bottom: 1.1rem;
+  padding-bottom: 0.2em;
+  border-bottom: 1px solid rgb(var(--pale-gray));
+  font-size: 1.7rem;
+}
+
+.md-container h2 {
+  width: 100%;
+  margin-top: 36px;
+  margin-bottom: 18px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgb(var(--pale-gray));
+  text-align: left;
+}
+
+.md-container h3 {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+.md-container blockquote {
+  font-size: 0.9em;
+  margin: 1.4rem 0;
+  padding: 2px 0 2px 0.7em;
+  color: rgb(var(--pale-text-color));
+  border-left: 3px solid #8f9faa;
+}
+
+.md-container pre {
+  width: 100%;
+  margin: 20px 0;
+  padding: 18px;
+  border-radius: 12px;
+  background-color: rgb(var(--dark-blue));
+  box-shadow: 0 4px 6px -1px rgba(var(--primary-gray), 0.1);
+}
+
+.md-container pre > code {
+  color: #ffffff;
+  background-color: inherit;
+}
+
+.md-container code {
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  background-color: rgb(var(--code-background-color));
+  font-family:
+    Menlo,
+    Monaco,
+    Lucida Console,
+    Liberation Mono,
+    DejaVu Sans Mono,
+    Bitstream Vera Sans Mono,
+    Courier New,
+    monospace;
+}
+
+.md-container ul {
+  margin-top: 11px;
+  margin-bottom: 22px;
+  padding-left: 25px;
+}
+
+.md-container ol {
+  margin-top: 0.6rem;
+  margin-bottom: 1.4rem;
+  padding-left: 1.7rem;
+}
+
+.md-container ol > li {
+  margin: 0.4rem 0;
+  line-height: 1.7rem;
+}
+
+.md-container img {
+  width: 100%;
+  max-width: 800px;
+  margin: 0.6rem 0;
+  border-radius: 4px;
 }

@@ -1,0 +1,116 @@
+@mixin color-button-model() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgb(var(--white));
+  border-radius: 100vh;
+}
+
+@mixin color-button($color, $hover) {
+  @include color-button-model();
+  background-color: rgb($color);
+  cursor: pointer;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: rgb($hover);
+    }
+  }
+}
+
+@mixin disabled-color-button($color) {
+  @include color-button-model();
+  background-color: rgb($color);
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@mixin circle-button() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem;
+  border-radius: 100vh;
+  font-size: 1.1rem;
+  position: relative;
+  cursor: pointer;
+}
+
+@mixin border($width) {
+  width: $width;
+  border-radius: 100vh;
+  border: 1px solid rgb(var(--text-color));
+}
+
+.pink-button {
+  @include color-button(var(--primary-pink), var(--primary-pink-hover));
+}
+
+.pink-disabled-button {
+  @include disabled-color-button(var(--primary-pink));
+}
+
+.white-button {
+  @include color-button(var(--white), var(--pale-gray));
+  color: rgb(var(--text-color));
+  outline: 1px solid rgba(var(--pale-text-color), 0.2);
+}
+
+.circle-bg-button {
+  @include circle-button();
+  background-color: rgb(var(--pale-gray));
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: rgba(var(--primary-pink), 0.1);
+    }
+  }
+}
+
+// toggleButton
+
+.toggle-button {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 0.3rem;
+  cursor: pointer;
+}
+
+.hover-menu {
+  min-width: 3rem;
+  position: absolute;
+  bottom: 2.4rem;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  word-break: break-all;
+  color: rgb(var(--pale-text-color));
+  background-color: rgb(var(--background-color));
+  box-shadow: var(--drop-shadow);
+  border: 1px solid rgba(var(--pale-text-color), 0.2);
+  border-radius: 0.2rem;
+}
+
+.border1 {
+  @include border(1.3rem);
+}
+
+.border2 {
+  @include border(1rem);
+}
+
+.border3 {
+  @include border(0.7rem);
+}
