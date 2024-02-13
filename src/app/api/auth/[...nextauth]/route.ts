@@ -1,15 +1,13 @@
 import NextAuth from 'next-auth';
 import GithubProvider from 'next-auth/providers/github';
 import GoogleProvider from 'next-auth/providers/google';
-import Email from 'next-auth/providers/email';
-import { PrismaAdapter } from '@auth/prisma-adapter';
-import { PrismaClient } from '@prisma/client';
-import type { NextAuthOptions } from 'next-auth';
+// import { PrismaAdapter } from '@auth/prisma-adapter';
+// import { PrismaClient } from '@prisma/client';
 
-const prisma = new PrismaClient();
+// const prisma = new PrismaClient();
 
-export const authOptions: NextAuthOptions = {
-  // secret: process.env.NEXTAUTH_SECRET,
+export const authOptions = {
+  secret: process.env.NEXTAUTH_SECRET,
   providers: [
     GithubProvider({
       clientId: process.env.GITHUB_CLIENT_ID ?? '',
@@ -19,12 +17,8 @@ export const authOptions: NextAuthOptions = {
       clientId: process.env.GOOGLE_CLIENT_ID ?? '',
       clientSecret: process.env.GOOGLE_CLIENT_SECRET ?? '',
     }),
-    Email({
-      server: process.env.EMAIL_SERVER,
-      from: process.env.EMAIL_FROM,
-    }),
   ],
-  adapter: PrismaAdapter(prisma),
+  // adapter: PrismaAdapter(prisma),
 };
 
 const handler = NextAuth(authOptions);
