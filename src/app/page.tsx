@@ -1,5 +1,12 @@
-import styles from './page.module.scss';
+import Footer from '@/components/footer/Footer';
+import MainHeader from '@/components/header/MainHeader';
 
 export default function Home() {
-  return <div className={styles['']} />;
+  return (
+    <>
+      <MainHeader />
+      <div />
+      <Footer />
+    </>
+  );
 }

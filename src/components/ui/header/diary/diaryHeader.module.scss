@@ -1,0 +1,20 @@
+.container {
+  width: 100%;
+  height: var(--form-header-height);
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  background-color: rgb(var(--background-color));
+  border-bottom: 1px solid rgba(var(--pale-text-color), 0.2);
+}
+
+.menu-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
