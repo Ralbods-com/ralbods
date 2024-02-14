@@ -69,7 +69,7 @@
 }
 
 .bg-pink {
-  @include bg(var(--primary-pink));
+  @include bg(var(--main-color));
 }
 
 .close-button {

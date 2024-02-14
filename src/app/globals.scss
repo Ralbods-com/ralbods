@@ -4,11 +4,12 @@
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 
   // color
-  --primary-pink: 254, 81, 150;
-  --primary-sub-pink: 247, 112, 98;
+  --main-color: 54, 217, 191;
+  --sub-color: 0, 175, 204;
+
   --white: 255, 255, 255;
 
-  --primary-pink-hover: 244, 81, 130;
+  --main-color-hover: 34, 197, 171;
 
   --pale-gray: 242, 242, 242;
   --pale-gray-2: 220, 220, 220;
@@ -26,10 +27,10 @@
   --shadow-color: 0, 0, 0;
   --background-color: 255, 255, 255;
   --pale-background-color: 242, 242, 242;
-  --pale-colored-background-color: 255, 240, 240;
+  --pale-colored-background-color: 215, 247, 242;
 
   --drop-shadow: 0 2px 4px rgba(var(--text-color), 0.1), 0 4px 8px rgba(var(--text-color), 0.1);
-  --drop-shadow-pink: 0 2px 4px rgba(var(--primary-pink), 0.1), 0 4px 8px rgba(var(--primary-pink), 0.1);
+  --drop-shadow-pink: 0 2px 4px rgba(var(--main-color), 0.1), 0 4px 8px rgba(var(--main-color), 0.1);
   // gradation
   --main-gradient: linear-gradient(135deg, rgba(254,81,150,1) 0%, rgba(247,112,98,1) 100%);
   // width, height
@@ -126,7 +127,7 @@ textarea {
 }
 
 .md-container a {
-  color: rgb(var(--primary-pink));
+  color: rgb(var(--main-color));
   font-weight: 600;
 }
 
