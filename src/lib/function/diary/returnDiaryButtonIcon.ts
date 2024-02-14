@@ -5,6 +5,8 @@ import {
   FaHeading,
   FaItalic,
   FaLink,
+  FaListOl,
+  FaListUl,
   FaQuestion,
 } from 'react-icons/fa6';
 import { RiQuoteText } from 'react-icons/ri';
@@ -25,6 +27,10 @@ export const returnDiaryButtonIcon = (
       return { Icon: RiQuoteText, text: '引用' };
     case 'code':
       return { Icon: FaCode, text: 'コード' };
+    case 'list':
+      return { Icon: FaListUl, text: 'リスト' };
+    case 'numList':
+      return { Icon: FaListOl, text: '番号リスト' };
     default:
       return { Icon: FaHeading, text: '見出し' };
   }

@@ -1,0 +1,59 @@
+@mixin menu() {
+  width: calc(var(--toggle-menu-height) * 1.8);
+  height: var(--toggle-menu-height);
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.container {
+  width: calc(var(--toggle-menu-height) * 3.9);
+  height: var(--toggle-menu-height);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.2rem;
+  background-color: rgb(var(--background-color));
+  border: 0.13rem solid rgb(var(--pale-gray));
+  border-radius: 0.3rem;
+  position: relative;
+}
+
+.container[data-isEnd='true'] {
+  justify-content: flex-end;
+}
+
+.menu-bg {
+  width: calc(var(--toggle-menu-height) * 1.8);
+  height: 100%;
+  border-radius: 0.3rem;
+  background-color: rgb(var(--primary-pink));
+}
+
+.menu-left {
+  @include menu();
+  left: 0.2rem;
+}
+
+.menu-left-focus {
+  @include menu();
+  left: 0.2rem;
+  color: rgb(var(--white));
+  cursor: default;
+}
+
+.menu-right {
+  @include menu();
+  right: 0.2rem;
+}
+
+.menu-right-focus {
+  @include menu();
+  right: 0.2rem;
+  color: rgb(var(--white));
+  cursor: default;
+}

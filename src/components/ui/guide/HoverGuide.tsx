@@ -2,9 +2,9 @@
 
 import { motion } from 'framer-motion';
 import { returnHoverMenuTransition } from '@/lib/function/menu/returnHoverMenuTransition';
-import styles from './menu.module.scss';
+import styles from './guide.module.scss';
 
-export default function HoverMenu({
+export default function HoverGuide({
   text,
   description,
   where,

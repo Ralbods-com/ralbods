@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { IconType } from 'react-icons';
 import styles from './diaryButton.module.scss';
-import HoverMenu from '../../menu/HoverMenu';
+import HoverGuide from '../../guide/HoverGuide';
 
 export default function DiaryFormSideButton({
   Icon,
@@ -42,7 +42,7 @@ export default function DiaryFormSideButton({
       >
         <Icon />
         {isHover && (
-          <HoverMenu
+          <HoverGuide
             text={menuText}
             description={null}
             where='left'
@@ -62,7 +62,7 @@ export default function DiaryFormSideButton({
       >
         <Icon />
         {isHover && (
-          <HoverMenu
+          <HoverGuide
             text={menuText}
             description={null}
             where='left'

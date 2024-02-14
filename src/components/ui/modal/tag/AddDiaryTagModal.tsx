@@ -3,10 +3,13 @@
 import { useState } from 'react';
 import { RxCross2 } from 'react-icons/rx';
 import { FaTags } from 'react-icons/fa6';
+import { tags as tagList } from '@/lib/data/tag/tags';
+import RecommendTagBox from '@/components/tag/RecommendTagBox';
 import modalStyles from '../modal.module.scss';
 import styles from './tagModal.module.scss';
 import AddTagIndexMenu from '../../menu/tag/AddTagIndexMenu';
 import TagMenuBox from '../../menu/tag/TagMenuBox';
+import SelectMenuToggle from '../../toggle/menu/SelectMenuDoubleToggle';
 
 export default function AddDiaryTagModal({
   tags,
@@ -21,6 +24,14 @@ export default function AddDiaryTagModal({
   const [isTagMenu, setIsTagMenu] = useState(false);
   const [isPrevent, setIsPrevent] = useState(false);
   const [seenMenu, setSeenMenu] = useState<string | null>(null);
+  const [isToggle, setIsToggle] = useState(0);
+  let recommendTagIndex = [];
+
+  if (isToggle === 0) {
+    recommendTagIndex = tagList.slice(0, 10);
+  } else {
+    recommendTagIndex = tagList.slice(0, 7);
+  }
 
   const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
@@ -43,6 +54,10 @@ export default function AddDiaryTagModal({
 
   const handlePrevent = (bool: boolean) => {
     setIsPrevent(bool);
+  };
+
+  const handleToggle = (num: number) => {
+    setIsToggle(num);
   };
 
   const handleKeyDown = (e: {
@@ -125,6 +140,17 @@ export default function AddDiaryTagModal({
                 />
               )}
             </form>
+          </div>
+          <SelectMenuToggle leftText='おすすめ' rightText='人気' which={isToggle} onChange={handleToggle} />
+          <div className={styles['tags-container']}>
+            {recommendTagIndex.map((item) => (
+              <RecommendTagBox
+                name={item.name}
+                text={item.text}
+                img={item.img}
+                handleClick={addTag}
+              />
+            ))}
           </div>
         </div>
       </div>

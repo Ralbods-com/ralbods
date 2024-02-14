@@ -15,6 +15,9 @@
 
   --dark-gray: 115, 76, 86;
 
+  --pre-code-bg: 40, 42, 54;
+  --code-bg: 240, 240, 240;
+
   --yellow: 255, 204, 51;
   --red: 255, 102, 102;
 
@@ -31,12 +34,15 @@
   --main-gradient: linear-gradient(135deg, rgba(254,81,150,1) 0%, rgba(247,112,98,1) 100%);
   // width, height
   --prev-toggle-circle-width: 2.5rem;
+  --toggle-menu-height: 2.5rem;
   --prev-toggle-padding: 0.2rem;
   --form-min-height: 30rem;
   --form-header-height: 3.1rem;
 
   // padding
   --form-side-padding: 0.5rem;
+  --md-guide-padding: 0.6rem 0.8rem;
+
   @media screen and (min-width: 751px) {
     --form-side-padding: 2.5rem;
   }
@@ -87,6 +93,10 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+img {
+  object-fit: cover;
 }
 
 input {
@@ -150,7 +160,7 @@ textarea {
   margin: 1.4rem 0;
   padding: 2px 0 2px 0.7em;
   color: rgb(var(--pale-text-color));
-  border-left: 3px solid #8f9faa;
+  border-left: 3px solid rgb(var(--pale-gray-2));
 }
 
 .md-container pre {
@@ -158,7 +168,7 @@ textarea {
   margin: 20px 0;
   padding: 18px;
   border-radius: 12px;
-  background-color: rgb(var(--dark-blue));
+  background-color: rgb(var(--pre-code-bg));
   box-shadow: 0 4px 6px -1px rgba(var(--primary-gray), 0.1);
 }
 
@@ -170,7 +180,7 @@ textarea {
 .md-container code {
   padding: 0.2rem 0.4rem;
   border-radius: 4px;
-  background-color: rgb(var(--code-background-color));
+  background-color: rgb(var(--code-bg));
   font-family:
     Menlo,
     Monaco,
@@ -204,4 +214,9 @@ textarea {
   max-width: 800px;
   margin: 0.6rem 0;
   border-radius: 4px;
+}
+
+.md-container hr {
+  border-top: 2px solid rgb(var(--pale-gray-2));
+  margin: 2.5rem 0;
 }

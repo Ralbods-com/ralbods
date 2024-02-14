@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaEye, FaPenNib } from 'react-icons/fa6';
 import styles from './diaryToggle.module.scss';
-import HoverMenu from '../../menu/HoverMenu';
+import HoverGuide from '../../guide/HoverGuide';
 
 export default function DiaryPrevToggle({
   isPrev,
@@ -42,11 +42,11 @@ export default function DiaryPrevToggle({
         style={
           isPrev
             ? {
-              backgroundColor: 'rgb(var(--primary-pink))',
-            }
+                backgroundColor: 'rgb(var(--primary-pink))',
+              }
             : {
-              backgroundColor: 'rgb(var(--pale-gray-2))',
-            }
+                backgroundColor: 'rgb(var(--pale-gray-2))',
+              }
         }
       />
       <div
@@ -66,7 +66,12 @@ export default function DiaryPrevToggle({
         >
           <FaPenNib />
           {isPrev && isWriteHover && (
-            <HoverMenu text='書く' description={null} where='left' end={null} />
+            <HoverGuide
+              text='書く'
+              description={null}
+              where='left'
+              end={null}
+            />
           )}
         </motion.div>
       </div>
@@ -87,7 +92,7 @@ export default function DiaryPrevToggle({
         >
           <FaEye />
           {!isPrev && isPrevHover && (
-            <HoverMenu
+            <HoverGuide
               text='プレビュー'
               description={null}
               where='left'

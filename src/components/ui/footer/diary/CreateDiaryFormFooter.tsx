@@ -44,6 +44,8 @@ export default function CreateDiaryFormFooter({
             <DiaryFormMdButton kind='quote' num={3} handleClick={() => handleMdButton('\n> ', '')} />
             <DiaryFormMdButton kind='code' num={4} handleClick={() => handleMdButton(' `', '` ')} />
             <DiaryFormMdButton kind='link' num={5} handleClick={() => handleMdButton(' [', '](url) ')} />
+            <DiaryFormMdButton kind='list' num={6} handleClick={() => handleMdButton('\n- ', '')} />
+            <DiaryFormMdButton kind='numList' num={7} handleClick={() => handleMdButton('\n1. ', '')} />
           </>
         )}
         <ToggleButton menu={isMenu} handleMenu={handleMenu} menuText='アシストメニュー' />

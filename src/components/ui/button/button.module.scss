@@ -53,8 +53,14 @@
 }
 
 .white-button {
-  @include color-button(var(--white), var(--pale-gray));
+  @include color-button(var(--white), var(--pale-background-color));
   color: rgb(var(--text-color));
+  outline: 1px solid rgba(var(--pale-text-color), 0.2);
+}
+
+.white-pale-button {
+  @include color-button(var(--white), var(--pale-background-color));
+  color: rgb(var(--pale-text-color));
   outline: 1px solid rgba(var(--pale-text-color), 0.2);
 }
 
