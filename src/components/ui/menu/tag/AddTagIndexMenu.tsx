@@ -18,7 +18,9 @@ export default function AddTagIndexMenu({
   handleSeen: (menu: string | null) => void;
 }) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const baseTagIndex = tags.filter((tag) => tag.name.startsWith(val.toLocaleLowerCase()));
+  const baseTagIndex = tags.filter((tag) =>
+    tag.name.startsWith(val.toLocaleLowerCase()),
+  );
   const tagIndex = baseTagIndex.filter((tag) => !selectTags.includes(tag.name));
 
   if (tagIndex.length === 0) {
@@ -35,15 +37,15 @@ export default function AddTagIndexMenu({
   const handleKeyDown = (e: { ctrlKey: boolean; key: string }) => {
     if (tagIndex.length !== 0) {
       if (
-        (e.key === 'ArrowUp' || (e.ctrlKey && e.key === 'p'))
-        && activeIndex > 0
+        (e.key === 'ArrowUp' || (e.ctrlKey && e.key === 'p')) &&
+        activeIndex > 0
       ) {
         // Up Arrow
         setActiveIndex(activeIndex - 1);
         handleSeen(tagIndex[activeIndex].name);
       } else if (
-        (e.key === 'ArrowDown' || (e.ctrlKey && e.key === 'n'))
-        && activeIndex < tagIndex.length - 1
+        (e.key === 'ArrowDown' || (e.ctrlKey && e.key === 'n')) &&
+        activeIndex < tagIndex.length - 1
       ) {
         // Down Arrow
         setActiveIndex(activeIndex + 1);
@@ -78,7 +80,7 @@ export default function AddTagIndexMenu({
           style={{
             backgroundColor:
               tagIndex[activeIndex].name === tag.name
-                ? 'rgba(var(--primary-pink), 0.3)'
+                ? 'rgba(var(--main-color), 0.3)'
                 : '',
           }}
           onClick={() => addTag(tag.name)}

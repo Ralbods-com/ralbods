@@ -45,11 +45,11 @@
 }
 
 .pink-button {
-  @include color-button(var(--primary-pink), var(--primary-pink-hover));
+  @include color-button(var(--main-color), var(--main-color-hover));
 }
 
 .pink-disabled-button {
-  @include disabled-color-button(var(--primary-pink));
+  @include disabled-color-button(var(--main-color));
 }
 
 .white-button {
@@ -69,7 +69,7 @@
   background-color: rgb(var(--pale-gray));
   @media (hover: hover) and (pointer: fine) {
     &:hover {
-      background-color: rgba(var(--primary-pink), 0.1);
+      background-color: rgba(var(--main-color), 0.1);
     }
   }
 }

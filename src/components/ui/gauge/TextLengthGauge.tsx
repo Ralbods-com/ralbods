@@ -12,7 +12,7 @@ export default function TextLengthGauge({
 }) {
   const underCircleStyle = () => {
     if (textLength < maxLength - 10) {
-      return { stroke: 'rgba(var(--primary-pink), 0.3)' };
+      return { stroke: 'rgba(var(--main-color), 0.3)' };
     } else if (textLength < maxLength) {
       return { stroke: 'rgba(var(--yellow), 0.3)' };
     } else if (textLength >= maxLength) {

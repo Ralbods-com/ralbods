@@ -41,12 +41,8 @@ export default function DiaryPrevToggle({
         transition={spring}
         style={
           isPrev
-            ? {
-                backgroundColor: 'rgb(var(--primary-pink))',
-              }
-            : {
-                backgroundColor: 'rgb(var(--pale-gray-2))',
-              }
+            ? { backgroundColor: 'rgb(var(--main-color))' }
+            : { backgroundColor: 'rgb(var(--pale-gray-2))' }
         }
       />
       <div

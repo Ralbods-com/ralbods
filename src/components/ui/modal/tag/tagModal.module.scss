@@ -20,13 +20,14 @@
   border-radius: 0.3rem;
   position: relative;
   &:focus-within {
-    border: 0.15rem solid rgba(var(--primary-pink), 0.6);
-    box-shadow: 0 0 0 2.5px rgba(var(--primary-pink), 0.3);
+    border: 0.15rem solid rgba(var(--main-color), 0.6);
+    box-shadow: 0 0 0 2.5px rgba(var(--main-color), 0.3);
   }
 }
 
 .search-input {
   width: 100%;
+  flex: 1;
   padding: 0.2rem;
 }
 

@@ -24,7 +24,7 @@
 }
 
 .circle-top {
-  @include circle(var(--primary-pink));
+  @include circle(var(--main-color));
 }
 
 .circle-under {
