@@ -18,7 +18,7 @@
   font-weight: 600;
   cursor: pointer;
   &:hover {
-    background-color: rgba(var(--primary-pink), 0.3);
+    background-color: rgba(var(--main-color), 0.3);
   }
 }
 
@@ -32,7 +32,7 @@
   padding: 0.2rem 0.5rem;
   font-size: 0.8rem;
   font-weight: 600;
-  border: 1px solid rgb(var(--primary-sub-pink));
+  border: 1px solid rgb(var(--sub-color));
   border-radius: 100vh;
 }
 

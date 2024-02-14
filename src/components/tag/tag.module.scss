@@ -6,12 +6,12 @@
   padding: 0.3rem 0.6rem;
   font-size: 0.8rem;
   font-weight: 600;
-  border: 0.1rem solid rgb(var(--primary-sub-pink));
+  border: 0.1rem solid rgb(var(--sub-color));
   border-radius: 0.3rem;
   cursor: pointer;
   @media (hover: hover) and (pointer: fine) {
     &:hover {
-      background-color: rgba(var(--primary-sub-pink), 0.3);
+      background-color: rgba(var(--sub-color), 0.3);
     }
   }
 }
