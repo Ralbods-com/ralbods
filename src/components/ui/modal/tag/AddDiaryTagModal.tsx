@@ -66,9 +66,9 @@ export default function AddDiaryTagModal({
     key: string;
   }) => {
     if (
-      (e.key === 'Backspace' || (e.ctrlKey && e.key === 'h')) &&
-      inputVal.trim() === '' &&
-      tags.length > 0
+      (e.key === 'Backspace' || (e.ctrlKey && e.key === 'h'))
+      && inputVal.trim() === ''
+      && tags.length > 0
     ) {
       setTags(tags.slice(0, -1));
     }
@@ -141,12 +141,7 @@ export default function AddDiaryTagModal({
               )}
             </form>
           </div>
-          <SelectMenuToggle
-            leftText='おすすめ'
-            rightText='人気'
-            which={isToggle}
-            onChange={handleToggle}
-          />
+          <SelectMenuToggle leftText='おすすめ' rightText='人気' which={isToggle} onChange={handleToggle} />
           <div className={styles['tags-container']}>
             {recommendTagIndex.map((item) => (
               <RecommendTagBox
