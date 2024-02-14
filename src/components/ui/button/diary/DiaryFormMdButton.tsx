@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { returnDiaryButtonIcon } from '@/lib/function/diary/returnDiaryButtonIcon';
 import styles from './diaryButton.module.scss';
-import HoverMenu from '../../menu/HoverMenu';
+import HoverGuide from '../../guide/HoverGuide';
 
 export default function DiaryFormMdButton({
   kind,
@@ -34,7 +34,7 @@ export default function DiaryFormMdButton({
     >
       <Icon />
       {isHover && (
-        <HoverMenu text={text} description={null} where='top' end={null} />
+        <HoverGuide text={text} description={null} where='top' end={null} />
       )}
     </motion.div>
   );
