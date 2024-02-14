@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { formListRegex, formNumListRegex } from '@/lib/regex/regex';
 import styles from './createDiaryForm.module.scss';
 
 export default function CreateDiaryForm({
@@ -36,6 +37,57 @@ export default function CreateDiaryForm({
     setCursorPos(cursorPosition);
   };
 
+  const handleKeyDown = (e: { preventDefault(): unknown; key: string }) => {
+    if (e.key === 'Enter') {
+      const element = textareaRef.current;
+
+      const textBeforeCursor = val.substring(0, cursorPos);
+      const lastTextIndex = textBeforeCursor.lastIndexOf('\n');
+      const lastText = textBeforeCursor.substring(lastTextIndex + 1);
+
+      const isMatchList = formListRegex.test(lastText);
+      const isMatchNumList = formNumListRegex.test(lastText);
+
+      if (isMatchList) {
+        e.preventDefault();
+        let newTextVal = '';
+        if (lastText === '- ') {
+          newTextVal = val.slice(0, cursorPos - 2) + val.slice(cursorPos);
+          setVal(newTextVal);
+
+          element.selectionStart -= 2;
+          element.selectionEnd -= 2;
+        } else {
+          newTextVal = `${val.slice(0, cursorPos)}\n- ${val.slice(cursorPos)}`;
+          setVal(newTextVal);
+
+          element.selectionStart += 3;
+          element.selectionPosEnd += 3;
+        }
+      }
+      if (isMatchNumList) {
+        e.preventDefault();
+        let newTextVal = '';
+        const num = parseInt(lastText[0], 10);
+
+        if (lastText === `${num}. `) {
+          newTextVal = val.slice(0, cursorPos - 3) + val.slice(cursorPos);
+          setVal(newTextVal);
+
+          element.selectionStart -= 3;
+          element.selectionEnd -= 3;
+        } else {
+          const newNum = num + 1;
+          newTextVal = `${val.slice(0, cursorPos)}\n${newNum}. ${val.slice(cursorPos)}`;
+          setVal(newTextVal);
+
+          element.selectionStart += 3 + newNum.toString().length;
+          element.selectionEnd += 3 + newNum.toString().length;
+        }
+      }
+    }
+  };
+
   useEffect(() => {
     if (textareaRef.current) {
       const element = textareaRef.current;
@@ -54,6 +106,7 @@ export default function CreateDiaryForm({
         value={val}
         onChange={(e) => handleValChange(e)}
         onFocus={handleFocus}
+        onKeyDown={handleKeyDown}
         ref={textareaRef}
         style={{ height }}
       />
