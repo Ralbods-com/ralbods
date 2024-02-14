@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { RiLightbulbFlashLine } from 'react-icons/ri';
+import { Session } from 'next-auth';
 import styles from './createDiaryFormArea.module.scss';
 import CreateDiaryForm from './CreateDiaryForm';
 import CreateDiaryFormFooter from '../../footer/diary/CreateDiaryFormFooter';
@@ -11,7 +12,11 @@ import CreateDiaryFormHeader from '../../header/diary/CreateDiaryFormHeader';
 import AddDiaryTagForm from '../tag/AddDiaryTagForm';
 import DiaryFormSideButton from '../../button/diary/DiaryFormSideButton';
 
-export default function CreateDiaryFormArea() {
+export default function CreateDiaryFormArea({
+  session,
+}: {
+  session: Session | null;
+}) {
   const [isPrev, setIsPrev] = useState(false);
   const [title, setTitle] = useState('');
   const [bodyText, setBodyText] = useState('');
@@ -40,10 +45,14 @@ export default function CreateDiaryFormArea() {
   const handleFocusArea = () => {
     setFocusTextArea(focusTextArea + 1);
   };
-
   return (
     <>
-      <CreateDiaryFormHeader body={bodyText} tags={tags} />
+      <CreateDiaryFormHeader
+        session={session}
+        title={title}
+        body={bodyText}
+        tags={tags}
+      />
       <div className={styles['all-container']}>
         <div className={styles['all-wrapper']}>
           <div className={styles['top-container']}>
