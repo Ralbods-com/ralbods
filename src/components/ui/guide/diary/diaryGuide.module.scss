@@ -1,0 +1,90 @@
+.bg {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 15;
+}
+
+.md-guide {
+  width: max-content;
+  max-width: 20rem;
+  max-height: 80%;
+  position: fixed;
+  bottom: 2.3rem;
+  left: 0.6rem;
+  z-index: 20;
+  overflow: hidden;
+  background-color: rgb(var(--background-color));
+  box-shadow: var(--drop-shadow);
+  border: 1px solid rgb(var(--pale-gray-2));
+  border-radius: 0.8rem;
+}
+
+.md-guide-wrapper {
+  width: 100%;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+}
+
+.md-guide-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 0.8rem;
+}
+
+.md-guide-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.2rem;
+  padding: var(--md-guide-padding);
+}
+
+.md-guide-box-top {
+  width: 100%;;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: var(--md-guide-padding);
+  background-color: rgb(var(--pale-background-color));
+  p {
+    width: 5rem;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+}
+
+.md-guide-title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 0.9rem;
+  font-weight: 600;
+  span {
+    min-width: 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: rgb(var(--pale-text-color));
+  }
+}
+
+.md-guide-description {
+  font-size: 0.8rem;
+  font-weight: 500;
+  word-break: break-all;
+}
+
+.md-guide-separate {
+  width: 90%;
+  border: 1px solid rgb(var(--pale-gray));
+  border-radius: 100vh;
+}
