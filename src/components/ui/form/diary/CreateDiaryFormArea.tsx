@@ -13,7 +13,7 @@ import DiaryFormSideButton from '../../button/diary/DiaryFormSideButton';
 
 export default function CreateDiaryFormArea() {
   const [isPrev, setIsPrev] = useState(false);
-  const [title, estTitle] = useState('');
+  const [title, setTitle] = useState('');
   const [bodyText, setBodyText] = useState('');
   const [tags, setTags] = useState<string[]>([]);
   const [cursorPos, setCursorPos] = useState(0);
@@ -24,7 +24,9 @@ export default function CreateDiaryFormArea() {
   };
 
   const changeBodyText = (val: string) => {
-    setBodyText(val);
+    if (!isPrev) {
+      setBodyText(val);
+    }
   };
 
   const changeCursorPos = (pos: number) => {
@@ -51,7 +53,7 @@ export default function CreateDiaryFormArea() {
               placeholder='タイトルを入力'
               maxLength={30}
               value={title}
-              onChange={(e) => estTitle(e.target.value)}
+              onChange={(e) => setTitle(e.target.value)}
             />
           </div>
           <div className={styles['main-container']}>
