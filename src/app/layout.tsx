@@ -4,7 +4,7 @@ import './globals.scss';
 import Footer from '@/components/footer/Footer';
 import NextAuthProvider from '@/providers/NextAuth';
 import { getServerSession } from 'next-auth';
-import LoginBtn from '@/components/ui/button/login/LoginBtn';
+// import LoginBtn from '@/components/ui/button/login/LoginBtn';
 import { authOptions } from './api/auth/[...nextauth]/route';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -23,8 +23,7 @@ export default async function RootLayout({
   return (
     <html lang='ja'>
       <body className={inter.className}>
-        <LoginBtn session={session} />
-        <NextAuthProvider>{children}</NextAuthProvider>
+        <NextAuthProvider session={session}>{children}</NextAuthProvider>
         <Footer />
       </body>
     </html>
