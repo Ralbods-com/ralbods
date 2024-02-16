@@ -23,22 +23,32 @@
   --red: 255, 102, 102;
 
   --text-color: 90, 90, 90;
+  --strong-text-color: 0, 0, 0;
   --pale-text-color: 128, 128, 128;
   --shadow-color: 0, 0, 0;
   --background-color: 255, 255, 255;
   --pale-background-color: 242, 242, 242;
   --pale-colored-background-color: 215, 247, 242;
 
-  --drop-shadow: 0 2px 4px rgba(var(--text-color), 0.1), 0 4px 8px rgba(var(--text-color), 0.1);
-  --drop-shadow-pink: 0 2px 4px rgba(var(--main-color), 0.1), 0 4px 8px rgba(var(--main-color), 0.1);
+  --drop-shadow: 0 2px 4px rgba(var(--text-color), 0.1),
+    0 4px 8px rgba(var(--text-color), 0.1);
+  --drop-shadow-pink: 0 2px 4px rgba(var(--main-color), 0.1),
+    0 4px 8px rgba(var(--main-color), 0.1);
   // gradation
-  --main-gradient: linear-gradient(135deg, rgba(254,81,150,1) 0%, rgba(247,112,98,1) 100%);
+  --main-gradient: linear-gradient(
+    135deg,
+    rgba(254, 81, 150, 1) 0%,
+    rgba(247, 112, 98, 1) 100%
+  );
   // width, height
   --prev-toggle-circle-width: 2.5rem;
   --toggle-menu-height: 2.5rem;
   --prev-toggle-padding: 0.2rem;
   --form-min-height: 30rem;
   --form-header-height: 3.1rem;
+  --select-year-menu-height: 2rem;
+
+  --user-diary-month-width: 2.5rem;
 
   // padding
   --form-side-padding: 0.5rem;
@@ -62,19 +72,19 @@
 
 @media screen and (max-width: 600px) {
   html {
-      font-size: 14px;
+    font-size: 14px;
   }
 }
 
 @media screen and (min-width: 601px) and (max-width: 1200px) {
   html {
-      font-size: 16px;
+    font-size: 16px;
   }
 }
 
 @media screen and (min-width: 1601px) {
   html {
-      font-size: 18px;
+    font-size: 18px;
   }
 }
 
@@ -121,7 +131,7 @@ textarea {
   height: auto;
   min-height: var(--form-min-height);
   line-height: 1.9;
-  >:first-child {
+  > :first-child {
     margin-top: 0;
   }
 }
@@ -218,6 +228,112 @@ textarea {
 }
 
 .md-container hr {
+  border-top: 2px solid rgb(var(--pale-gray-2));
+  margin: 2.5rem 0;
+}
+
+.md-small-container {
+  width: 100%;
+  height: auto;
+  line-height: 1.6;
+  color: rgb(var(--strong-text-color));
+  > :first-child {
+    margin-top: 0;
+  }
+}
+
+.md-small-container a {
+  color: rgb(var(--main-color));
+  font-weight: 600;
+}
+
+.md-small-container h1 {
+  width: 100%;
+  margin-top: 1em;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.1em;
+  border-bottom: 1px solid rgb(var(--pale-gray));
+  font-size: 1.7rem;
+}
+
+.md-small-container h2 {
+  width: 100%;
+  margin-top: 1.2rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid rgb(var(--pale-gray));
+  text-align: left;
+}
+
+.md-small-container h3 {
+  width: 100%;
+  margin-top: 0.6rem;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.md-small-container blockquote {
+  font-size: 0.9em;
+  margin: 0.7rem 0;
+  padding: 2px 0 2px 0.7em;
+  color: rgb(var(--pale-text-color));
+  border-left: 3px solid rgb(var(--pale-gray-2));
+}
+
+.md-small-container pre {
+  width: 100%;
+  margin: 1rem 0;
+  padding: 18px;
+  border-radius: 12px;
+  background-color: rgb(var(--pre-code-bg));
+  box-shadow: 0 4px 6px -1px rgba(var(--primary-gray), 0.1);
+}
+
+.md-small-container pre > code {
+  color: #ffffff;
+  background-color: inherit;
+}
+
+.md-small-container code {
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  background-color: rgb(var(--code-bg));
+  font-family:
+    Menlo,
+    Monaco,
+    Lucida Console,
+    Liberation Mono,
+    DejaVu Sans Mono,
+    Bitstream Vera Sans Mono,
+    Courier New,
+    monospace;
+}
+
+.md-small-container ul {
+  margin-top: 11px;
+  margin-bottom: 1rem;
+  padding-left: 25px;
+}
+
+.md-small-container ol {
+  margin-top: 0.6rem;
+  margin-bottom: 1.4rem;
+  padding-left: 1.7rem;
+}
+
+.md-small-container ol > li {
+  margin: 0.4rem 0;
+  line-height: 1.7rem;
+}
+
+.md-small-container img {
+  width: 100%;
+  max-width: 400px;
+  margin: 0.6rem 0;
+  border-radius: 4px;
+}
+
+.md-small-container hr {
   border-top: 2px solid rgb(var(--pale-gray-2));
   margin: 2.5rem 0;
 }
