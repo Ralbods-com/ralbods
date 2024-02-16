@@ -30,10 +30,10 @@ export default function DiaryFormSideButton({
         animate={
           isHover
             ? {
-                y: -4,
-                color: 'rgb(var(--main-color))',
-                boxShadow: 'var(--drop-shadow-pink)',
-              }
+              y: -4,
+              color: 'rgb(var(--main-color))',
+              boxShadow: 'var(--drop-shadow-pink)',
+            }
             : { y: 0 }
         }
         onMouseEnter={() => setIsHover(true)}

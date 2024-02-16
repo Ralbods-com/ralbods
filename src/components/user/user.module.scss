@@ -1,0 +1,93 @@
+// user diary index
+.user-diary-index {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.side-month-area {
+  width: var(--user-diary-month-width);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.month-text {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.diary-index-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+// user detail
+
+.diary-index-top {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.diary-index-side-space {
+  width: var(--user-diary-month-width);
+}
+
+.diary-index-top-main {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.3rem;
+  padding-left: 1.4rem;
+  padding-bottom: 2rem;
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: 10px;
+    bottom: 0;
+    width: 2px;
+    background: rgb(var(--pale-gray-2));
+  }
+}
+
+.diary-index-dot {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: -1px;
+  left: -16px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 23px;
+  color: rgb(var(--main-color));
+  background-color: rgb(var(--background-color));
+  border: 3px solid rgb(var(--background-color));
+  border-radius: 100vh;
+}
+
+.diary-index-achievement {
+  font-size: 1rem;
+  font-weight: 600;
+  span {
+    font-size: 1.1rem;
+  }
+}
+
+.diary-index-year {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: rgb(var(--pale-text-color));
+}
