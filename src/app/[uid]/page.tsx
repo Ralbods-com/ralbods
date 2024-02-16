@@ -1,12 +1,13 @@
 import ApplyFriendButton from '@/components/ui/button/user/ApplyFriendButton';
-import { exampleData } from '@/lib/data/example/exampleData';
 import { SiRabbitmq } from 'react-icons/si';
 import UserDetail from '@/components/user/UserDetail';
+import { getUserDataByuid } from '@/lib/function/user/getUserDataByuid';
 import styles from './userPage.module.scss';
 
-export default function UserPage() {
-  const userData = exampleData;
-
+export default async function UserPage({ params }: { params: { uid: String } }) {
+  const uid = String(params.uid);
+  const res = await getUserDataByuid(uid);
+  const userData = res.userDataByid;
   return (
     <div className={styles['screen']}>
       <div className={styles['container']}>
@@ -28,7 +29,7 @@ export default function UserPage() {
                 {userData.name}
               </p>
             </div>
-            <ApplyFriendButton id={userData.id} />
+            <ApplyFriendButton name={userData.name} />
           </div>
         </div>
         <div className={styles['user-contents-area']}>
