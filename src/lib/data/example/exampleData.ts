@@ -1,5 +1,5 @@
-import { DiaryType } from '@/types/diaryType';
-import { UserType } from '@/types/userType';
+import { DiaryShowType, DiaryType } from '@/types/diaryType';
+import { UserShowType } from '@/types/userType';
 
 const exampleDiariesData = <DiaryType[]>[
   {
@@ -22,10 +22,21 @@ const exampleDiariesData = <DiaryType[]>[
   },
 ];
 
-export const exampleData = <UserType>{
+export const exampleData = <UserShowType>{
   id: 'ralbods',
   name: 'Ralbods',
   image: null,
   achieveDateCount: 100,
   diaries: exampleDiariesData,
+};
+
+const exampleUserData = <UserShowType>{
+  id: 'ralbods',
+  name: 'Ralbods',
+  image: null,
+  achieveDateCount: 100,
+};
+
+export const exampleDiaryData: DiaryShowType = {
+  id: 4, title: 'テンションちょい下げ Diary', body: '# Hey\n## kk\n### kkaaは\n- あいうえおかきくけこさしすせそ\n1. kkafda\n```\nkkkkkkkk\n```\nkkk`kkk`\n> kkka', publishedAt: '2024-01-15T15:51:20.395Z', createdAt: '2024-01-15T15:51:20.395Z', updatedAt: '2024-01-15T15:51:20.395Z', userId: 'hasuro', mind: 'sad', date: '2024-01-15', tags: [{ id: 1, name: 'nextjs' }], user: exampleUserData,
 };
