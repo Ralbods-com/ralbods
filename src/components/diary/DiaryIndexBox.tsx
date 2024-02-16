@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { returnFormatDate } from '@/lib/function/DateFormat/returnFormatDate';
@@ -20,10 +21,16 @@ export default function DiaryIndexBox({
   const toggleText = isOpen ? '閉じる' : '本文を見る';
   const bgColor = returnDiaryBgColor(diaryData.mind);
 
-  const handleOpen = () => setIsOpen(!isOpen);
+  const handleOpen = (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+    setIsOpen(!isOpen);
+  };
 
   return (
-    <div className={styles[last ? 'index-box-last' : 'index-box']}>
+    <Link
+      href={`/${diaryData.userId}/${diaryData.id}`}
+      className={styles[last ? 'index-box-last' : 'index-box']}
+    >
       <div className={styles['index-box-dot']} />
       <div
         className={styles['index-box-container']}
@@ -55,6 +62,6 @@ export default function DiaryIndexBox({
           </div>
         )}
       </div>
-    </div>
+    </Link>
   );
 }
