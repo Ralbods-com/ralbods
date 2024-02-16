@@ -18,9 +18,9 @@ export default function UserDetail({
   const thisYearDiariesData: DiaryType[] = [];
   const groupedByMonth: { [key: string]: DiaryType[] } = {};
 
-  for (let i = 0; i < userData.diaries.length; i += 1) {
-    if (userData.diaries[i].date.startsWith(`${selectYear}`)) {
-      thisYearDiariesData.push(userData.diaries[i]);
+  for (let i = 0; i < userData.Diaries.length; i += 1) {
+    if (userData.Diaries[i].date.startsWith(`${selectYear}`)) {
+      thisYearDiariesData.push(userData.Diaries[i]);
     }
   }
 
@@ -50,7 +50,7 @@ export default function UserDetail({
           </div>
           <p className={styles['diary-index-achievement']}>
             達成日数：
-            <span>{userData.achieveDateCount}</span>
+            <span>{userData.Diaries.length}</span>
             日
           </p>
           <UserDetailSelectYearMenu year={selectYear} setYear={handleSelectYear} />

@@ -1,5 +1,5 @@
 import { getUserDataByuid } from '@/lib/function/user/getUserDataByuid';
-import { exampleData } from '@/lib/data/example/exampleData';
+// import { exampleData } from '@/lib/data/example/exampleData';
 import UserDetail from '@/components/user/UserDetail';
 import UserHeader from '@/components/ui/button/header/user/UserHeader';
 import styles from './userPage.module.scss';

@@ -5,7 +5,7 @@ export type UserShowType = {
   name: string,
   image: string | null,
   achieveDateCount: number,
-  diaries: DiaryType[],
+  Diaries: DiaryType[],
 };
 
 export type UserType = {

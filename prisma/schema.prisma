@@ -22,7 +22,7 @@ model Diary {
   date        String
   title       String
   body        String
-  mind        String
+  mind        String?
   createdAt   DateTime  @default(now()) @map("created_at")
   publishedAt DateTime?
   updatedAt   DateTime  @updatedAt @map("updated_at")

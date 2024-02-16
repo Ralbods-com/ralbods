@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { RiLightbulbFlashLine } from 'react-icons/ri';
 import { Session } from 'next-auth';
-import styles from './createDiaryFormArea.module.scss';
+// import styles from './createDiaryFormArea.module.scss';
 import CreateDiaryForm from './CreateDiaryForm';
 import CreateDiaryFormFooter from '../../footer/diary/CreateDiaryFormFooter';
 import DiaryPrevToggle from '../../toggle/diary/DiaryPrevToggle';

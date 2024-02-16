@@ -3,8 +3,6 @@ export const postDiary = async (
   date: string,
   title: string,
   body: string,
-  createdAt: Date,
-  updatedAt: Date,
   publishedAt: Date,
 ) => {
   try {
@@ -15,8 +13,6 @@ export const postDiary = async (
         date,
         title,
         body,
-        createdAt,
-        updatedAt,
         publishedAt,
       }),
     });
