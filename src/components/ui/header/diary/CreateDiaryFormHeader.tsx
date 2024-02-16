@@ -5,7 +5,7 @@ import { IoMdArrowBack } from 'react-icons/io';
 import buttonStyle from '@/components/ui/button/button.module.scss';
 import { Session } from 'next-auth';
 import { postDiary } from '@/lib/function/diary/postDiary';
-import { getCurrentDate } from '@/lib/function/DateFormat/dateFormat';
+import { dateFormat } from '@/lib/function/DateFormat/dateFormat';
 import styles from './diaryHeader.module.scss';
 
 const getUserId = async () => {
@@ -37,13 +37,13 @@ export default function CreateDiaryFormHeader({
   const onSubmit = async (e: any) => {
     e.preventDefault();
     const userId = await getUserId();
-    // console.log(userId.userData.id);
+    console.log(userId.userData.id);
     console.log(tags);
     try {
       // 現在時刻
       const now = new Date();
       // 今日の日付
-      const today = getCurrentDate();
+      const today = dateFormat(now);
       await postDiary(userId.userData.id, today, title, body, now, now, now);
       return postDiary;
     } catch (error) {
