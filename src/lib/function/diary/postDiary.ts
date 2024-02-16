@@ -3,21 +3,15 @@ export const postDiary = async (
   date: string,
   title: string,
   body: string,
-  createdAt: Date,
-  updatedAt: Date,
-  publishedAt: Date,
 ) => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_URL}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/form/diary`, {
       method: 'POST',
       body: JSON.stringify({
         userId,
         date,
         title,
         body,
-        createdAt,
-        updatedAt,
-        publishedAt,
       }),
     });
     return await res.json();
