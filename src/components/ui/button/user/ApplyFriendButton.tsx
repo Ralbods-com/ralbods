@@ -3,13 +3,13 @@
 import styles from '../button.module.scss';
 
 export default function ApplyFriendButton({
-  id,
+  name,
 }: {
-  id: string,
+  name: string,
 }) {
   return (
     <div className={styles['white-button']}>
-      {id}
+      {name}
       友達になる
     </div>
   );
