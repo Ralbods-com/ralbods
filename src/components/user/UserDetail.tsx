@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { returnMonthDate } from '@/lib/function/DateFormat/returnMonthDate';
 import { DiaryType } from '@/types/diaryType';
-import { UserType } from '@/types/userType';
+import { UserShowType } from '@/types/userType';
 import { GiLaurelsTrophy } from 'react-icons/gi';
 import styles from './user.module.scss';
 import UserDiaryIndex from './UserDiaryIndex';
@@ -12,7 +12,7 @@ import UserDetailSelectYearMenu from '../ui/menu/user/UserDetailSelectYearMenu';
 export default function UserDetail({
   userData,
 }: {
-  userData: UserType,
+  userData: UserShowType,
 }) {
   const [selectYear, setSelectYear] = useState(2024);
   const thisYearDiariesData: DiaryType[] = [];
