@@ -1,11 +1,3 @@
-@mixin user-icon() {
-  width: 3.3rem;
-  height: 3.3rem;
-  box-shadow: var(--drop-shadow);
-  border: 1px solid rgb(var(--pale-gray));
-  border-radius: 100vh;
-}
-
 .screen {
   width: 100%;
   min-height: 100vh;
@@ -25,41 +17,8 @@
   margin-bottom: 5rem;
   padding: 0 1.5rem;
   @media screen and (min-width: 901px) {
-    width: 760px;
+    width: var(--screen-width);
   }
-}
-
-.user-header {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.user-header-left {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 1rem;
-}
-
-.user-header-icon {
-  @include user-icon();
-}
-
-.user-header-icon-default {
-  @include user-icon();
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.8rem;
-  color: rgb(var(--pale-text-color));
-}
-
-.user-header-name {
-  font-size: 1.4rem;
-  font-weight: 600;
 }
 
 .user-contents-area {

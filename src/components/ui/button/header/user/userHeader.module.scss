@@ -1,0 +1,45 @@
+@mixin user-icon() {
+  width: 3.3rem;
+  height: 3.3rem;
+  box-shadow: var(--drop-shadow);
+  border: 1px solid rgb(var(--pale-gray));
+  border-radius: 100vh;
+}
+
+.container {
+  width: 100%;
+}
+
+.user-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.user-header-left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.user-header-icon {
+  @include user-icon();
+}
+
+.user-header-icon-default {
+  @include user-icon();
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: rgb(var(--pale-text-color));
+  background-color: rgb(var(--background-color));
+}
+
+.user-header-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
