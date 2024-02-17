@@ -1,0 +1,32 @@
+.select-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.select-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: rgb(var(--pale-gray));
+    }
+  }
+}
+
+.select-box-icon {
+  width: 3rem;
+  height: auto;
+  object-fit: cover;
+}
+
+.select-box-percentage {
+  font-size: 1rem;
+  font-weight: 600;
+}

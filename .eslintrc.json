@@ -19,7 +19,8 @@
     "jsx-a11y/no-noninteractive-element-interactions": "off",
     "jsxBracketSameLine:": "off",
     "@next/next/no-img-element": "off",
-    "tno-plusplus": "off"
+    "tno-plusplus": "off",
+    "@typescript-eslint/no-unused-vars": "warn"
   },
   "parserOptions": {
     "project": "./tsconfig.json"
