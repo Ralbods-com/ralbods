@@ -1,7 +1,7 @@
 import type { TagApiType } from './tagType';
 import type { UserShowType } from './userType';
 
-export type DiaryType = [
+export type DiaryType =
   {
     id: number,
     date: string,
@@ -13,8 +13,7 @@ export type DiaryType = [
     userId: string,
     mind: string,
     tags: TagApiType[],
-  },
-];
+  };
 
 export type DiaryShowType = {
   id: number,

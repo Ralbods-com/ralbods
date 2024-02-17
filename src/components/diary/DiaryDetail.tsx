@@ -11,7 +11,7 @@ export default function DiaryDetail({
   const markdownIt = MarkdownIt();
   return (
     <div className={styles['detail-container']}>
-      <p className={styles['detail-title']}>{diaryData[0].title}</p>
+      <p className={styles['detail-title']}>{diaryData.title}</p>
       {/* {diaryData.tags && (
         <div className={styles['detail-tag-index']}>
           {diaryData.tags.map((tag) => (
@@ -20,10 +20,10 @@ export default function DiaryDetail({
         </div>
       )} */}
       <div className={styles['detail-md-container']}>
-        {diaryData[0].body ? (
+        {diaryData.body ? (
           <div
             className='md-container'
-            dangerouslySetInnerHTML={{ __html: markdownIt.render(diaryData[0].body) }}
+            dangerouslySetInnerHTML={{ __html: markdownIt.render(diaryData.body) }}
           />
         ) : (
           <div className='md-container'>

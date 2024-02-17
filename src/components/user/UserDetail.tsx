@@ -25,7 +25,7 @@ export default function UserDetail({
   }
 
   thisYearDiariesData.forEach((item) => {
-    const monthVal = item.date.findLastIndex.split('-')[1]; // 'yy'の値を取得
+    const monthVal = item.date.split('-')[1]; // 'yy'の値を取得
     if (!groupedByMonth[monthVal]) {
       groupedByMonth[monthVal] = [];
     }

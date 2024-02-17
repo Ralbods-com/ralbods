@@ -11,7 +11,7 @@ export default function MainHeader({ session }: { session: Session | null }) {
       <LoginBtn session={session} />
       <div className={styles['container']}>
         <p className={styles['title']}>Ralbods</p>
-        <CreateDiaryButton />
+        <CreateDiaryButton session={session} />
       </div>
     </>
   );

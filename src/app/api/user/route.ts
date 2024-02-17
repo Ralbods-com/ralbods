@@ -8,6 +8,7 @@ export const POST = async (req: NextRequest) => {
       data: {
         email,
         name,
+        uid: 'ああああ',
       },
     });
     return NextResponse.json({ userData }, { status: 201 });
