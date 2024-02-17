@@ -8,6 +8,7 @@
   --sub-color: 0, 175, 204;
 
   --white: 255, 255, 255;
+  --black: 0, 0, 0;
 
   --main-color-hover: 34, 197, 171;
 
@@ -37,8 +38,8 @@
   // gradation
   --main-gradient: linear-gradient(
     135deg,
-    rgba(254, 81, 150, 1) 0%,
-    rgba(247, 112, 98, 1) 100%
+    rgb(var(--main-color)) 0%,
+    rgb(var(--sub-color)) 100%
   );
   // width, height
   --screen-min-width: 901px;
