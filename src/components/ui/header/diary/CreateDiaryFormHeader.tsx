@@ -36,7 +36,6 @@ export default function CreateDiaryFormHeader({
           {body.trim().length === 0 ? (
             <div className={buttonStyle['main-disabled-button']}>公開</div>
           ) : (
-            <div className={buttonStyle['main-color-button']} onClick={handleModal}>
               公開
             </div>
           )}

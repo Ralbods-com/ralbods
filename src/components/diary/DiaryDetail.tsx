@@ -1,7 +1,7 @@
 import MarkdownIt from 'markdown-it';
 import { DiaryType } from '@/types/diaryType';
 import styles from './diary.module.scss';
-import TagBox from '../tag/TagBox';
+// import TagBox from '../tag/TagBox';
 
 export default function DiaryDetail({
   diaryData,
@@ -9,17 +9,16 @@ export default function DiaryDetail({
   diaryData: DiaryType,
 }) {
   const markdownIt = MarkdownIt();
-
   return (
     <div className={styles['detail-container']}>
       <p className={styles['detail-title']}>{diaryData.title}</p>
-      {diaryData.tags && (
+      {/* {diaryData.tags && (
         <div className={styles['detail-tag-index']}>
           {diaryData.tags.map((tag) => (
             <TagBox kind={tag.name} key={tag.id} />
           ))}
         </div>
-      )}
+      )} */}
       <div className={styles['detail-md-container']}>
         {diaryData.body ? (
           <div

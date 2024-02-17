@@ -3,7 +3,7 @@
 import { SiRabbitmq } from 'react-icons/si';
 import { UserShowType } from '@/types/userType';
 import styles from './userHeader.module.scss';
-import ApplyFriendButton from '../../user/ApplyFriendButton';
+// import ApplyFriendButton from '../../user/ApplyFriendButton';
 
 export default function UserHeader({
   userData,
@@ -28,7 +28,7 @@ export default function UserHeader({
           {userData.name}
         </p>
       </div>
-      <ApplyFriendButton id={userData.id} />
+      {/* <ApplyFriendButton id={userData.id} /> */}
     </div>
   );
 }
