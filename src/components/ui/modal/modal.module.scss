@@ -6,6 +6,7 @@
   left: 0;
   z-index: 100;
   background-color: rgba($color, 0.3);
+  filter: blur(4px);
 }
 
 @mixin menu-button() {
@@ -72,6 +73,10 @@
   @include bg(var(--main-color));
 }
 
+.bg-main {
+  @include bg(var(--main-color));
+}
+
 .close-button {
   @include menu-button();
   right: 0.8rem;
@@ -89,6 +94,15 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  gap: 0.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.modal-title-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 0.2rem;
   font-size: 1.1rem;
   font-weight: 600;
