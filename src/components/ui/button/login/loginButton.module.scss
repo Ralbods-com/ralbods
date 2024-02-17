@@ -1,0 +1,14 @@
+.login-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 0.5rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  // box-shadow: 0 5px 25px rgba(0,0,0,.15);
+  color: rgb(var(--white));
+  background: var(--main-gradient);
+  border-radius: 0.5rem;
+  cursor: pointer;
+}

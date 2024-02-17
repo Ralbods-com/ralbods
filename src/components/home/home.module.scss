@@ -1,0 +1,33 @@
+.concept-box {
+  width: 16rem;
+  height: 15rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.8rem;
+  padding: 1rem;
+  background-color: rgba(var(--main-color), 0.2);
+  border-radius: 1rem;
+}
+
+.concept-box-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  background-color: rgb(var(--background-color));
+  border-radius: 100vh;
+}
+
+.concept-box-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.concept-box-text {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgb(var(--pale-text-color));
+}

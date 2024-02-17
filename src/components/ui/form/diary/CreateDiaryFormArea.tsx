@@ -17,10 +17,12 @@ export default function CreateDiaryFormArea({
 }: {
   session: Session | null;
 }) {
-  const [isPrev, setIsPrev] = useState(false);
+  // リクエストに必要なデータ
   const [title, setTitle] = useState('');
   const [bodyText, setBodyText] = useState('');
   const [tags, setTags] = useState<string[]>([]);
+
+  const [isPrev, setIsPrev] = useState(false);
   const [cursorPos, setCursorPos] = useState(0);
   const [focusTextArea, setFocusTextArea] = useState(10);
 
