@@ -27,6 +27,20 @@
   }
 }
 
+@mixin send-btn($color) {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgb(var(--white));
+  background-color: rgb($color);
+  border-radius: 100vh;
+  cursor: pointer;
+}
+
 .modal-container {
   width: 100%;
   max-height: 95%;
@@ -80,6 +94,10 @@
 .close-button {
   @include menu-button();
   right: 0.8rem;
+}
+
+.send-btn-main {
+  @include send-btn(var(--main-color));
 }
 
 .modal-top {

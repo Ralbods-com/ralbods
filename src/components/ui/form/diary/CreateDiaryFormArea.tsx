@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { RiLightbulbFlashLine } from 'react-icons/ri';
-import { Session } from 'next-auth';
 import styles from './createDiaryFormArea.module.scss';
 import CreateDiaryForm from './CreateDiaryForm';
 import CreateDiaryFormFooter from '../../footer/diary/CreateDiaryFormFooter';
@@ -12,11 +11,7 @@ import CreateDiaryFormHeader from '../../header/diary/CreateDiaryFormHeader';
 import AddDiaryTagForm from '../tag/AddDiaryTagForm';
 import DiaryFormSideButton from '../../button/diary/DiaryFormSideButton';
 
-export default function CreateDiaryFormArea({
-  session,
-}: {
-  session: Session | null;
-}) {
+export default function CreateDiaryFormArea() {
   // リクエストに必要なデータ
   const [title, setTitle] = useState('');
   const [bodyText, setBodyText] = useState('');
@@ -50,7 +45,6 @@ export default function CreateDiaryFormArea({
   return (
     <>
       <CreateDiaryFormHeader
-        session={session}
         title={title}
         body={bodyText}
         tags={tags}
