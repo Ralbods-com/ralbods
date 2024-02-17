@@ -21,9 +21,9 @@ const getUserId = async () => {
 };
 
 export default function SendDiaryModal({
-  title, body, onClose,
+  title, body, tags, onClose,
 }: {
-  title: string, body: string, onClose: () => void,
+  title: string, body: string, tags: string[], onClose: () => void,
 }) {
   const [isSelectMind, setIsSelectMind] = useState(2);
 
