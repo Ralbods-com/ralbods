@@ -51,6 +51,7 @@
     "nodemailer": "^6.9.9",
     "prettier": "^3.2.5",
     "prisma": "^5.9.1",
+    "react-toastify": "^10.0.4",
     "sass": "^1.70.0",
     "typescript": "^5"
   }

@@ -6,18 +6,9 @@ import buttonStyle from '@/components/ui/button/button.module.scss';
 import { Session } from 'next-auth';
 import { postDiary } from '@/lib/function/diary/postDiary';
 import { dateFormat } from '@/lib/function/DateFormat/dateFormat';
+import { getUser } from '@/lib/function/user/getUser';
 import styles from './diaryHeader.module.scss';
 
-const getUserId = async () => {
-  try {
-    const userData = await fetch(`${process.env.NEXT_PUBLIC_URL}/user`, {
-      method: 'GET',
-    });
-    return await userData.json();
-  } catch (error) {
-    return console.log(error);
-  }
-};
 export default function CreateDiaryFormHeader({
   title,
   body,
@@ -36,18 +27,17 @@ export default function CreateDiaryFormHeader({
 
   const onSubmit = async (e: any) => {
     e.preventDefault();
-    const userId = await getUserId();
-    console.log(userId.userData.id);
-    console.log(tags);
+    const user = await getUser(session?.user?.email || '');
+    const userId = user.res.id;
     try {
-      // 現在時刻
-      const now = new Date();
       // 今日の日付
-      const today = dateFormat(now);
-      await postDiary(userId.userData.id, today, title, body, now, now, now);
+      const today = dateFormat(new Date());
+      console.log(userId, today, title, body, tags);
+      await postDiary(userId, today, title, body, new Date(), tags);
+      router.push(`/${userId}`);
       return postDiary;
     } catch (error) {
-      return console.log(error);
+      return error;
     }
   };
 
@@ -63,7 +53,10 @@ export default function CreateDiaryFormHeader({
           {body.trim().length === 0 ? (
             <div className={buttonStyle['main-disabled-button']}>公開</div>
           ) : (
-            <div className={buttonStyle['main-color-button']} onClick={onSubmit}>
+            <div
+              className={buttonStyle['main-color-button']}
+              onClick={onSubmit}
+            >
               公開
             </div>
           )}

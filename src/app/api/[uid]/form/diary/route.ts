@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from 'next/server';
 // 投稿用
 export const POST = async (req: NextRequest) => {
   const {
-    userId, date, title, body, mind, publishedAt,
+    userId, date, title, body, publishedAt, tags,
   } = await req.json();
   try {
     const diaryData = await prisma.diary.create({
@@ -14,7 +14,8 @@ export const POST = async (req: NextRequest) => {
         title,
         publishedAt,
         body,
-        mind,
+        mind: 'aaaa',
+        tags,
       },
     });
     return NextResponse.json({ diaryData }, { status: 201 });
