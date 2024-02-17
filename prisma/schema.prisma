@@ -10,10 +10,11 @@ datasource db {
 
 model User {
   id            String    @id @default(uuid())
-  name          String?
-  email         String?   @unique
+  uid          String
+  name          String
+  email         String   @unique
   image         String?
-  link          String?          
+  link          String?
   Diaries Diary[]
 }
 
@@ -22,7 +23,7 @@ model Diary {
   date        String
   title       String
   body        String
-  mind        String
+  mind        String?
   createdAt   DateTime  @default(now()) @map("created_at")
   publishedAt DateTime?
   updatedAt   DateTime  @updatedAt @map("updated_at")

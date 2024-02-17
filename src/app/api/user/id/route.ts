@@ -6,6 +6,7 @@ export const POST = async (req: NextRequest) => {
   try {
     const res = await prisma.user.findUnique({
       where: { email },
+      include: { Diaries: true },
     });
     return NextResponse.json({ res }, { status: 201 });
   } catch (error) {

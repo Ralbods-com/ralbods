@@ -10,7 +10,7 @@ export default function MainHeader() {
       <LoginButton />
       <div className={styles['container']}>
         <p className={styles['title']}>Ralbods</p>
-        <CreateDiaryButton />
+        <CreateDiaryButton session={session} />
       </div>
     </>
   );

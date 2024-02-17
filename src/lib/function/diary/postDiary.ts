@@ -3,19 +3,23 @@ export const postDiary = async (
   date: string,
   title: string,
   body: string,
+  publishedAt: Date,
+  tags: string[],
 ) => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/form/diary`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/${userId}/form/diary`, {
       method: 'POST',
       body: JSON.stringify({
         userId,
         date,
         title,
         body,
+        publishedAt,
+        tags,
       }),
     });
     return await res.json();
   } catch (error) {
-    return console.log(error);
+    return error;
   }
 };

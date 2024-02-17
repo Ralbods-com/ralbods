@@ -29,15 +29,15 @@ export default function CreateDiaryFormHeader({
     e.preventDefault();
     const user = await getUser(session?.user?.email || '');
     const userId = user.res.id;
-    console.log(tags);
     try {
       // 今日の日付
       const today = dateFormat(new Date());
-      console.log(userId, today, title, body);
-      await postDiary(userId, today, title, body);
+      console.log(userId, today, title, body, tags);
+      await postDiary(userId, today, title, body, new Date(), tags);
+      router.push(`/${userId}`);
       return postDiary;
     } catch (error) {
-      return console.log(error);
+      return error;
     }
   };
 
@@ -53,7 +53,10 @@ export default function CreateDiaryFormHeader({
           {body.trim().length === 0 ? (
             <div className={buttonStyle['main-disabled-button']}>公開</div>
           ) : (
-            <div className={buttonStyle['main-color-button']} onClick={onSubmit}>
+            <div
+              className={buttonStyle['main-color-button']}
+              onClick={onSubmit}
+            >
               公開
             </div>
           )}
