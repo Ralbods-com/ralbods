@@ -11,9 +11,8 @@ export default function RootTemplate({
   const router = useRouter();
   const pathname = usePathname();
   const { data: session } = useSession();
-
   if (pathname === '/' && session?.user) {
-    router.push('/ralbods');
+    router.push('/');
   } else {
     return children;
   }

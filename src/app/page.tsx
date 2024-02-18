@@ -5,9 +5,15 @@ import ScrollAnimation from '@/components/ui/animation/ScrollAnimation';
 import { SiRabbitmq } from 'react-icons/si';
 import { TbLayoutCollage, TbMarkdown } from 'react-icons/tb';
 import { FaToolbox } from 'react-icons/fa6';
+import { getServerSession } from 'next-auth';
+import { authOptions } from '@/lib/auth';
+import { postUserData } from '@/lib/function/user/postUserData';
 import styles from './page.module.scss';
 
 export default async function Home() {
+  const session = await getServerSession(authOptions);
+  await postUserData(session?.user?.email || '', session?.user?.name || '');
+
   return (
     <>
       {/* <MainHeader session={session} /> */}
@@ -22,7 +28,7 @@ export default async function Home() {
           エンジニアのための日記です。
         </p>
         <div className={styles['button-container']}>
-          <LoginButton />
+          <LoginButton session={session} />
         </div>
         <div className={styles['top-scroll-box']}>
           <ScrollAnimation />
@@ -50,6 +56,7 @@ export default async function Home() {
           <HomeConceptBox Icon={FaToolbox} title='技術別で管理' description='開発で使った技術やトピックを日記にタグ付けすることで、後から技術別に返すことが可能です。' />
         </div>
       </div>
+      <LoginButton session={session} />
       <Footer />
     </>
   );
