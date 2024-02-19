@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { RxCross2 } from 'react-icons/rx';
 import { LuSend } from 'react-icons/lu';
 import { dateFormat } from '@/lib/function/DateFormat/dateFormat';
@@ -26,6 +27,7 @@ export default function SendDiaryModal({
   title: string, body: string, tags: string[], onClose: () => void,
 }) {
   const [isSelectMind, setIsSelectMind] = useState(2);
+  const router = useRouter();
 
   const onSubmit = async (e: any) => {
     e.preventDefault();
@@ -35,8 +37,9 @@ export default function SendDiaryModal({
       const now = new Date();
       // 今日の日付
       const today = dateFormat(now);
-      await postDiary(userId.userData.id, today, title, body, now, now, now);
+      await postDiary(userId.userData.id, today, title, body, now, tags);
       return postDiary;
+      router.push('/');
     } catch (error) {
       return console.log(error);
     }
