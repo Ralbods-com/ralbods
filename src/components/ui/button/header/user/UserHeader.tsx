@@ -2,6 +2,7 @@
 
 import { SiRabbitmq } from 'react-icons/si';
 import { UserShowType } from '@/types/userType';
+import { use } from 'react';
 import styles from './userHeader.module.scss';
 // import ApplyFriendButton from '../../user/ApplyFriendButton';
 
@@ -10,6 +11,7 @@ export default function UserHeader({
 }: {
   userData: UserShowType,
 }) {
+  console.log(userData);
   return (
     <div className={styles['user-header']}>
       <div className={styles['user-header-left']}>

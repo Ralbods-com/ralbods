@@ -10,12 +10,13 @@ datasource db {
 
 model User {
   id            String    @id @default(uuid())
-  uid          String?
+  uid           String @unique
   name          String
   email         String   @unique
   image         String?
   link          String?
   Diaries Diary[]
+  template Template?
 }
 
 model Diary {
@@ -36,6 +37,14 @@ model Tag {
   id      Int     @id @default(autoincrement())
   name    String
   diaries Diary[]
+}
+
+model Template {
+  id Int @id @default(autoincrement())
+  title String
+  body String
+  userId String @unique
+  user User @relation(fields: [userId], references: [id])
 }
 
 model DiaryToTag {

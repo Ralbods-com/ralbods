@@ -40,7 +40,7 @@ export default function LoginButton({ session }: { session: Session | null }) {
           </div>
         )
       }
-      {
+      {/* {
         // セッションがない場合、ログインを表示
         // ログインボタンを押すと、ログインページに遷移する
         !session && (
@@ -49,7 +49,7 @@ export default function LoginButton({ session }: { session: Session | null }) {
             <button type='button' onClick={() => signIn()}>ログイン</button>
           </div>
         )
-      }
+      } */}
     </>
   );
 }
