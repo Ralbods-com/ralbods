@@ -1,5 +1,4 @@
 // import { exampleData } from '@/lib/data/example/exampleData';
-import { exampleData } from '@/lib/data/example/exampleData';
 import UserDetail from '@/components/user/UserDetail';
 import UserHeader from '@/components/ui/button/header/user/UserHeader';
 import NonUserPageButton from '@/components/ui/button/user/NonUserPageButton';
@@ -12,10 +11,10 @@ export default async function UserPage({
 }: {
   params: { uid: String }
 }) {
-  // const uid = String(params.uid);
-  // const res = await getUserDataByuid(uid);
-  // const userData = res.userDataByid;
-  const userData = exampleData;
+  const uid = String(params.uid);
+  const res = await getUserDataByuid(uid);
+  const userData = res.userDataByid;
+  // const userData = exampleData;
 
   if (!userData) {
     return (
