@@ -1,15 +1,19 @@
 'use client';
 
-import { SiRabbitmq } from 'react-icons/si';
 import { UserShowType } from '@/types/userType';
+import { useSession } from 'next-auth/react';
+import { SiRabbitmq } from 'react-icons/si';
 import styles from './userHeader.module.scss';
-// import ApplyFriendButton from '../../user/ApplyFriendButton';
+import ApplyFriendButton from '../../user/ApplyFriendButton';
+import UserCreateDiaryButton from '../../user/UserCreateDiaryButton';
 
 export default function UserHeader({
   userData,
 }: {
   userData: UserShowType,
 }) {
+  const { data: session } = useSession();
+
   return (
     <div className={styles['user-header']}>
       <div className={styles['user-header-left']}>
@@ -28,7 +32,11 @@ export default function UserHeader({
           {userData.name}
         </p>
       </div>
-      {/* <ApplyFriendButton id={userData.id} /> */}
+      {(session?.user) ? (
+        <UserCreateDiaryButton />
+      ) : (
+        <ApplyFriendButton id={userData.id} />
+      )}
     </div>
   );
 }
