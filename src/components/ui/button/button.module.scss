@@ -38,6 +38,29 @@
   cursor: pointer;
 }
 
+@mixin gradation-button($gradation) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  background: $gradation;
+  border-radius: 100vh;
+  cursor: pointer;
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.2rem 0.7rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background-color: rgb(var(--background-color));
+    border-radius: 100vh;
+  }
+  &:hover div {
+    background-color: rgb(var(--pale-background-color));
+  }
+}
+
 @mixin border($width) {
   width: $width;
   border-radius: 100vh;
@@ -62,6 +85,10 @@
   @include color-button(var(--white), var(--pale-background-color));
   color: rgb(var(--pale-text-color));
   outline: 1px solid rgba(var(--pale-text-color), 0.2);
+}
+
+.main-gradation-button {
+  @include gradation-button(var(--main-gradient));
 }
 
 .circle-bg-button {

@@ -239,7 +239,7 @@ textarea {
   width: 100%;
   height: auto;
   line-height: 1.6;
-  color: rgb(var(--strong-text-color));
+  // color: rgb(var(--strong-text-color));
   > :first-child {
     margin-top: 0;
   }
@@ -339,4 +339,23 @@ textarea {
 .md-small-container hr {
   border-top: 2px solid rgb(var(--pale-gray-2));
   margin: 2.5rem 0;
+}
+
+.react-calendar-heatmap .color-empty {
+  fill: rgb(var(--pale-gray));
+}
+.react-calendar-heatmap .color-scale-0 {
+  fill: rgba(var(--main-color), 0.4);
+}
+.react-calendar-heatmap .color-scale-1 {
+  fill: rgba(var(--sub-color), 0.4);
+}
+.react-calendar-heatmap .color-scale-2 {
+  fill: rgb(var(--pale-gray-2));
+}
+.react-calendar-heatmap .color-scale-3 {
+  fill: rgba(var(--yellow), 0.4);
+}
+.react-calendar-heatmap .color-scale-4 {
+  fill: rgba(var(--red), 0.4);
 }

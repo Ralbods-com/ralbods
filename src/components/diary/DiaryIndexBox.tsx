@@ -27,8 +27,7 @@ export default function DiaryIndexBox({
   };
 
   return (
-    <Link
-      href={`/${diaryData.userId}/${diaryData.id}`}
+    <div
       className={styles[last ? 'index-box-last' : 'index-box']}
     >
       <div className={styles['index-box-dot']} />
@@ -39,7 +38,12 @@ export default function DiaryIndexBox({
         <p className={styles['index-box-date']}>
           {returnFormatDate(diaryData.date)}
         </p>
-        <p className={styles['index-box-title']}>{diaryData.title}</p>
+        <Link
+          href={`/${diaryData.userId}/${diaryData.id}`}
+          className={styles['index-box-title']}
+        >
+          {diaryData.title}
+        </Link>
         {diaryData.tags && (
           <div className={styles['tags-index']}>
             {diaryData.tags.map((item) => (
@@ -62,6 +66,6 @@ export default function DiaryIndexBox({
           </div>
         )}
       </div>
-    </Link>
+    </div>
   );
 }

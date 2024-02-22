@@ -46,6 +46,7 @@
 }
 
 .index-box-title {
+  width: 100%;
   font-size: 1.2rem;
   font-weight: 600;
 }
@@ -110,6 +111,7 @@
   justify-content: flex-start;
   gap: 0.8rem;
   margin-top: 2.5rem;
+  margin-bottom: 3rem;
   padding: 1.5rem;
   background-color: rgb(var(--background-color));
   border: 1px solid rgb(var(--pale-gray-2));

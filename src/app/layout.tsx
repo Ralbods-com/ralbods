@@ -5,6 +5,7 @@ import { getServerSession } from 'next-auth';
 import NextAuthProvider from '@/providers/NextAuth';
 // import { authOptions } from './api/auth/[...nextauth]/route';
 import { authOptions } from '@/lib/auth';
+import 'react-calendar-heatmap/dist/styles.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
