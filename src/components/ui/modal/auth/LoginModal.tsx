@@ -13,7 +13,7 @@ export default function LoginModal({
 }) {
   return (
     <>
-      <div className={modalStyle['modal-container']}>
+      <div className={modalStyle['check-modal-container']}>
         <div className={modalStyle['close-button']} onClick={onClose}>
           <RxCross2 />
         </div>
