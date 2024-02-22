@@ -1,9 +1,11 @@
 // grass gauge
 
 .grass-gauge-box {
-  width: 1000px;
+  min-width: calc(var(--screen-min-width) - 3rem);
   height: auto;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  padding-left: 0.2rem;
+  padding-bottom: 0.4rem;
 }
