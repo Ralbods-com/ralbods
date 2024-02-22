@@ -23,7 +23,7 @@ export default function LoginButton({ session }: { session: Session | null }) {
         はじめる
       </motion.div>
       {isModal && <LoginModal onClose={handleModal} />}
-      {
+      {/* {
         // セッションがある場合、ログアウトを表示
         session && (
           <div>

@@ -21,7 +21,9 @@
   --code-bg: 240, 240, 240;
 
   --yellow: 255, 204, 51;
+
   --red: 255, 102, 102;
+  --red-hover: 230, 80, 80;
 
   --text-color: 90, 90, 90;
   --strong-text-color: 0, 0, 0;
@@ -341,21 +343,56 @@ textarea {
   margin: 2.5rem 0;
 }
 
+.react-calendar-heatmap rect {
+  rx: 2px;
+  ry: 2px;
+}
+
 .react-calendar-heatmap .color-empty {
   fill: rgb(var(--pale-gray));
+  &:hover {
+    stroke-width: 0px;
+    stroke: rgb(var(--pale-gray));
+  }
 }
+
 .react-calendar-heatmap .color-scale-0 {
   fill: rgba(var(--main-color), 0.4);
+  &:hover {
+    stroke: none;
+    fill: rgba(var(--main-color), 0.6);
+    cursor: pointer;
+  }
 }
 .react-calendar-heatmap .color-scale-1 {
   fill: rgba(var(--sub-color), 0.4);
+  &:hover {
+    stroke: none;
+    fill: rgba(var(--sub-color), 0.6);
+    cursor: pointer;
+  }
 }
 .react-calendar-heatmap .color-scale-2 {
   fill: rgb(var(--pale-gray-2));
+  &:hover {
+    stroke: none;
+    fill: rgba(var(--pale-gray-2), 0.8);
+    cursor: pointer;
+  }
 }
 .react-calendar-heatmap .color-scale-3 {
   fill: rgba(var(--yellow), 0.4);
+  &:hover {
+    stroke: none;
+    fill: rgba(var(--yellow), 0.6);
+    cursor: pointer;
+  }
 }
 .react-calendar-heatmap .color-scale-4 {
   fill: rgba(var(--red), 0.4);
+  &:hover {
+    stroke: none;
+    fill: rgba(var(--red), 0.6);
+    cursor: pointer;
+  }
 }

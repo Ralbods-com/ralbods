@@ -1,7 +1,10 @@
 import Link from 'next/link';
 import { FaGithub, FaXTwitter } from 'react-icons/fa6';
+import { useSession } from 'next-auth/react';
 import styles from './footer.module.scss';
+import LogoutButton from '../ui/button/auth/LogoutButton';
 import ColorThemeToggle from '../ui/toggle/theme/ColorThemeToggle';
+import FooterButtonContainer from './FooterButtonContainer';
 
 export default function Footer() {
   return (
@@ -67,7 +70,7 @@ export default function Footer() {
             </a>
           </div>
         </div>
-        <ColorThemeToggle />
+        <FooterButtonContainer />
       </div>
     </footer>
   );

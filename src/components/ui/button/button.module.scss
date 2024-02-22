@@ -27,6 +27,25 @@
   cursor: not-allowed;
 }
 
+@mixin big-color-button($color, $hover) {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgb(var(--white));
+  background-color: rgb($color);
+  border-radius: 100vh;
+  cursor: pointer;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: rgb($hover);
+    }
+  }
+}
+
 @mixin circle-button() {
   display: flex;
   align-items: center;
@@ -84,6 +103,22 @@
 .white-pale-button {
   @include color-button(var(--white), var(--pale-background-color));
   color: rgb(var(--pale-text-color));
+  outline: 1px solid rgba(var(--pale-text-color), 0.2);
+}
+
+.pale-bg-button {
+  @include color-button(var(--pale-background-color), var(--pale-gray-2));
+  color: rgb(var(--pale-text-color));
+  outline: rgb(var(--pale-gray-2));
+}
+
+.big-red-button {
+  @include big-color-button(var(--red), var(--red-hover));
+}
+
+.big-white-button {
+  @include big-color-button(var(--white), var(--pale-background-color));
+  color: rgb(var(--text-color));
   outline: 1px solid rgba(var(--pale-text-color), 0.2);
 }
 

@@ -41,7 +41,7 @@
   cursor: pointer;
 }
 
-.modal-container {
+@mixin modal-container() {
   width: 100%;
   max-height: 95%;
   position: fixed;
@@ -56,21 +56,12 @@
   overflow-y: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  @media screen and (min-width: 481px) {
-    width: 450px;
-    top: 50%;
-    left: 50%;
-    bottom: auto;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    border-radius: 1rem;
-  }
   &::-webkit-scrollbar {
     display: none;
   }
 }
 
-.modal-form {
+@mixin modal-form() {
   width: 100%;
   min-height: 300px;
   display: flex;
@@ -83,12 +74,62 @@
   position: relative;
 }
 
+.modal-container {
+  @include modal-container();
+  @media screen and (min-width: 481px) {
+    width: 450px;
+    top: 50%;
+    left: 50%;
+    bottom: auto;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    border-radius: 1rem;
+  }
+}
+
+.check-modal-container {
+  @include modal-container();
+  @media screen and (min-width: 381px) {
+    width: 350px;
+    top: 50%;
+    left: 50%;
+    bottom: auto;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    border-radius: 1rem;
+  }
+}
+
+.modal-form {
+  @include modal-form();
+}
+
+.check-modal-form {
+  @include modal-form();
+  min-height: 200px;
+  align-items: center;
+}
+
+.check-btn-container {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
 .bg-pink {
   @include bg(var(--main-color));
 }
 
 .bg-main {
   @include bg(var(--main-color));
+}
+
+.black-bg {
+  @include bg(var(--black));
 }
 
 .close-button {
@@ -104,6 +145,14 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.2rem;
+}
+
+.check-modal-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: flex-start;
   gap: 0.2rem;
 }
