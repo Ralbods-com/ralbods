@@ -7,10 +7,10 @@ import LoginButton from '../ui/button/login/LoginButton';
 export default function MainHeader() {
   return (
     <>
-      <LoginButton />
+      {/* <LoginButton /> */}
       <div className={styles['container']}>
         <p className={styles['title']}>Ralbods</p>
-        <CreateDiaryButton session={session} />
+        {/* <CreateDiaryButton session={session} /> */}
       </div>
     </>
   );
