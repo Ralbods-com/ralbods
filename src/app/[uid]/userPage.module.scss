@@ -27,5 +27,34 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  margin-top: 3rem;
+  margin-top: 2rem;
+}
+
+.user-grass-gauge-container {
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 3rem;
+  overflow-x: auto;
+}
+
+.non-user-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.non-user-icon {
+  font-size: 3rem;
+}
+
+.non-user-text {
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+  font-weight: 700;
 }
