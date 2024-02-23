@@ -2,7 +2,9 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { useAtom } from 'jotai';
 import { IoMdArrowBack } from 'react-icons/io';
+import { invalidScrollState } from '@/atoms/atoms';
 import buttonStyle from '@/components/ui/button/button.module.scss';
 import styles from './diaryHeader.module.scss';
 import SendDiaryModal from '../../modal/diary/SendDiaryModal';
@@ -18,8 +20,12 @@ export default function CreateDiaryFormHeader({
 }) {
   const router = useRouter();
   const [isModal, setIsModal] = useState(false);
+  const [isScrollInvalid, setIsScrollInvalid] = useAtom(invalidScrollState);
 
-  const handleModal = () => setIsModal(!isModal);
+  const handleModal = () => {
+    setIsModal(!isModal);
+    setIsScrollInvalid(!isScrollInvalid);
+  };
 
   const handleBack = () => {
     router.back();
