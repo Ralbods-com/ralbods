@@ -1,13 +1,19 @@
 'use client';
 
 import { useState } from 'react';
-import styles from '../button.module.scss';
+import { useAtom } from 'jotai';
+import { invalidScrollState } from '@/atoms/atoms';
 import LogoutModal from '../../modal/auth/LogoutModal';
+import styles from '../button.module.scss';
 
 export default function LogoutButton() {
   const [isModal, setIsModal] = useState(false);
+  const [isScrollInvalid, setIsScrollInvalid] = useAtom(invalidScrollState);
 
-  const handleModal = () => setIsModal(!isModal);
+  const handleModal = () => {
+    setIsModal(!isModal);
+    setIsScrollInvalid(!isScrollInvalid);
+  };
 
   return (
     <>

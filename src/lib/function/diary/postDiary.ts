@@ -7,7 +7,7 @@ export const postDiary = async (
   tags: string[],
 ) => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/${userId}/form/diary`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/form/diary`, {
       method: 'POST',
       body: JSON.stringify({
         userId,

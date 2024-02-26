@@ -1,13 +1,11 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import './globals.scss';
 import { getServerSession } from 'next-auth';
 import NextAuthProvider from '@/providers/NextAuth';
 // import { authOptions } from './api/auth/[...nextauth]/route';
 import { authOptions } from '@/lib/auth';
 import 'react-calendar-heatmap/dist/styles.css';
-
-const inter = Inter({ subsets: ['latin'] });
+import { Provider } from 'jotai';
 
 export const metadata: Metadata = {
   title: 'Ralbods',
@@ -23,7 +21,9 @@ export default async function RootLayout({
   return (
     <html lang='ja'>
       <NextAuthProvider session={session}>
-        <body className={inter.className}>{children}</body>
+        <Provider>
+          {children}
+        </Provider>
       </NextAuthProvider>
     </html>
   );
