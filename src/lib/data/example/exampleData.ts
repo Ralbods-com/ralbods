@@ -38,5 +38,5 @@ const exampleUserData = <UserShowType>{
 };
 
 export const exampleDiaryData = <DiaryShowType>{
-  id: 4, title: 'テンションちょい下げ Diary', body: '# Hey\n## kk\n### kkaaは\n- あいうえおかきくけこさしすせそ\n1. kkafda\n```\nkkkkkkkk\n```\nkkk`kkk`\n> kkka', publishedAt: '2024-01-15T15:51:20.395Z', createdAt: '2024-01-15T15:51:20.395Z', updatedAt: '2024-01-15T15:51:20.395Z', userId: 'hasuro', mind: 'sad', date: '2024-01-15', tags: [{ id: 1, name: 'nextjs' }], user: exampleUserData,
+  id: 4, title: 'テンションちょい下げ Diary', body: '# Hey\n## kk\n### kkaaは\n- あいうえおかきくけこさしすせそ\n1. kkafda\n```\nkkkkkkkk\n```\nkkk`kkk`\n> kkka', publishedAt: '2024-01-15T15:51:20.395Z', createdAt: '2024-01-15T15:51:20.395Z', updatedAt: '2024-01-15T15:51:20.395Z', userId: 'hasuro', mind: 0, date: '2024-01-15', tags: [{ id: 1, name: 'nextjs' }], user: exampleUserData,
 };
