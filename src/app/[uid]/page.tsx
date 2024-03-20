@@ -4,6 +4,7 @@ import UserHeader from '@/components/ui/button/header/user/UserHeader';
 import NonUserPageButton from '@/components/ui/button/user/NonUserPageButton';
 import UserDiaryGrassGauge from '@/components/ui/gauge/user/UserDiaryGrassGauge';
 import { SiRabbitmq } from 'react-icons/si';
+import { getUserDataByuid } from '@/lib/function/user/getUserDataByuid';
 import styles from './userPage.module.scss';
 
 export default async function UserPage({

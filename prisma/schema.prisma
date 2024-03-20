@@ -9,49 +9,41 @@ datasource db {
 }
 
 model User {
-  id            String    @id @default(uuid())
-  uid           String @unique
-  name          String
-  email         String   @unique
-  image         String?
-  link          String?
-  Diaries Diary[]
+  id       String    @id @default(uuid())
+  uid      String    @unique
+  name     String
+  email    String    @unique
+  image    String?
+  link     String?
+  Diaries  Diary[]
   template Template?
 }
 
 model Diary {
-  id          Int       @id @default(autoincrement())
+  id          Int      @id @default(autoincrement())
   date        String
   title       String
   body        String
-  mind        String?
-  createdAt   DateTime  @default(now()) @map("created_at")
-  publishedAt DateTime?
-  updatedAt   DateTime  @updatedAt @map("updated_at")
-  user User @relation(fields: [userId], references: [id])
+  mind        Int
+  createdAt   DateTime @default(now()) @map("created_at")
+  publishedAt DateTime
+  updatedAt   DateTime @updatedAt @map("updated_at")
   userId      String
+  user        User     @relation(fields: [userId], references: [id])
   tags        Tag[]
 }
 
 model Tag {
-  id      Int     @id @default(autoincrement())
+  id      Int    @id @default(autoincrement())
   name    String
-  diaries Diary[]
+  diaryId Int
+  diary   Diary  @relation(fields: [diaryId], references: [id])
 }
 
 model Template {
-  id Int @id @default(autoincrement())
-  title String
-  body String
+  id     Int    @id @default(autoincrement())
+  title  String
+  body   String
   userId String @unique
-  user User @relation(fields: [userId], references: [id])
-}
-
-model DiaryToTag {
-  A Int
-  B Int
-
-  @@unique([A, B], map: "_DiaryToTag_AB_unique")
-  @@index([B], map: "_DiaryToTag_B_index")
-  @@map("_DiaryToTag")
+  user   User   @relation(fields: [userId], references: [id])
 }

@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { RxCross2 } from 'react-icons/rx';
 import { LuSend } from 'react-icons/lu';
 import { dateFormat } from '@/lib/function/DateFormat/dateFormat';
-import { postDiary } from '@/lib/function/diary/postDiary';
+import { postDiary } from '@/lib/function/diary/diary';
 import SelectMindBox from '@/components/mind/SelectMindBox';
 import modalStyles from '../modal.module.scss';
 import styles from './diaryModal.module.scss';
@@ -17,14 +17,20 @@ const getUserId = async () => {
     });
     return await userData.json();
   } catch (error) {
-    return console.log(error);
+    return error;
   }
 };
 
 export default function SendDiaryModal({
-  title, body, tags, onClose,
+  title,
+  body,
+  tags,
+  onClose,
 }: {
-  title: string, body: string, tags: string[], onClose: () => void,
+  title: string;
+  body: string;
+  tags: string[];
+  onClose: () => void;
 }) {
   const [isSelectMind, setIsSelectMind] = useState(2);
   const router = useRouter();
@@ -37,11 +43,11 @@ export default function SendDiaryModal({
       const now = new Date();
       // 今日の日付
       const today = dateFormat(now);
-      await postDiary(userId.userData.id, today, title, body, now, tags);
+      await postDiary(today, title, body, isSelectMind, '0b3f8290-985f-4cc2-ac6d-ce2d314fab00', tags);
+      router.push('/xx-n59');
       return postDiary;
-      router.push('/');
     } catch (error) {
-      return console.log(error);
+      return error;
     }
   };
 
@@ -69,11 +75,31 @@ export default function SendDiaryModal({
             <div className={styles['mind-container']}>
               <p>今日の気分は？</p>
               <div className={styles['mind-select-container']}>
-                <SelectMindBox kind={4} isSelect={isSelectMind} selectMind={handleSelectMind} />
-                <SelectMindBox kind={3} isSelect={isSelectMind} selectMind={handleSelectMind} />
-                <SelectMindBox kind={2} isSelect={isSelectMind} selectMind={handleSelectMind} />
-                <SelectMindBox kind={1} isSelect={isSelectMind} selectMind={handleSelectMind} />
-                <SelectMindBox kind={0} isSelect={isSelectMind} selectMind={handleSelectMind} />
+                <SelectMindBox
+                  kind={4}
+                  isSelect={isSelectMind}
+                  selectMind={handleSelectMind}
+                />
+                <SelectMindBox
+                  kind={3}
+                  isSelect={isSelectMind}
+                  selectMind={handleSelectMind}
+                />
+                <SelectMindBox
+                  kind={2}
+                  isSelect={isSelectMind}
+                  selectMind={handleSelectMind}
+                />
+                <SelectMindBox
+                  kind={1}
+                  isSelect={isSelectMind}
+                  selectMind={handleSelectMind}
+                />
+                <SelectMindBox
+                  kind={0}
+                  isSelect={isSelectMind}
+                  selectMind={handleSelectMind}
+                />
               </div>
             </div>
             <div className={modalStyles['send-btn-main']} onClick={onSubmit}>
@@ -82,10 +108,7 @@ export default function SendDiaryModal({
           </div>
         </div>
       </div>
-      <div
-        className={modalStyles['bg-main']}
-        onClick={onClose}
-      />
+      <div className={modalStyles['bg-main']} onClick={onClose} />
     </>
   );
 }

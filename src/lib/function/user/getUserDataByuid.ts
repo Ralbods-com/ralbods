@@ -6,6 +6,6 @@ export const getUserDataByuid = async (uid: string) => {
     });
     return await res.json();
   } catch (error) {
-    return console.log(error);
+    return error;
   }
 };

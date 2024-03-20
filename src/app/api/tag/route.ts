@@ -10,16 +10,3 @@ export const GET = async () => {
     return NextResponse.json({ error }, { status: 500 });
   }
 };
-
-// タグ追加
-export const POST = async (req: NextRequest) => {
-  const { name } = await req.json();
-  try {
-    await prisma.tag.create({
-      data: { name },
-    });
-    return NextResponse.json({ name }, { status: 201 });
-  } catch (error) {
-    return NextResponse.json({ error }, { status: 500 });
-  }
-};

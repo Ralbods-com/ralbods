@@ -16,16 +16,3 @@ export const POST = async (req: NextRequest) => {
     return NextResponse.json({ error }, { status: 500 });
   }
 };
-
-// export const GET = async () => {
-//   try {
-//     const userData = await prisma.user.findUnique({
-//       where: {
-//         email: '',
-//       },
-//     });
-//     return NextResponse.json({ userData }, { status: 201 });
-//   } catch (error) {
-//     return NextResponse.json({ error }, { status: 500 });
-//   }
-// };

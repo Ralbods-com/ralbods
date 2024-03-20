@@ -51,9 +51,21 @@ export default async function Home() {
           ここは自由な開発日記アプリです。
         </p>
         <div className={styles['concept-box-index']}>
-          <HomeConceptBox Icon={TbMarkdown} title='マークダウンに対応' description='マークダウン記法で日記を書くことができます。これにより、より自由な表現が可能です。' />
-          <HomeConceptBox Icon={TbLayoutCollage} title='テンプレートを作成' description='日記に好きなテンプレートを決めることができます。毎日使うものをより便利に使いこなしましょう。' />
-          <HomeConceptBox Icon={FaToolbox} title='技術別で管理' description='開発で使った技術やトピックを日記にタグ付けすることで、後から技術別に返すことが可能です。' />
+          <HomeConceptBox
+            Icon={TbMarkdown}
+            title='マークダウンに対応'
+            description='マークダウン記法で日記を書くことができます。これにより、より自由な表現が可能です。'
+          />
+          <HomeConceptBox
+            Icon={TbLayoutCollage}
+            title='テンプレートを作成'
+            description='日記に好きなテンプレートを決めることができます。毎日使うものをより便利に使いこなしましょう。'
+          />
+          <HomeConceptBox
+            Icon={FaToolbox}
+            title='技術別で管理'
+            description='開発で使った技術やトピックを日記にタグ付けすることで、後から技術別に返すことが可能です。'
+          />
         </div>
       </div>
       <LoginButton session={session} />
