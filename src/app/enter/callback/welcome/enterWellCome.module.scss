@@ -1,0 +1,95 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.all-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  @media screen and (min-width: 301px) {
+    width: 300px;
+  }
+}
+
+.logo-icon {
+  font-size: 2.6rem;
+  color: rgb(var(--main-color));
+  animation: logoColor 8s infinite alternate;
+}
+
+@keyframes logoColor {
+  0% {
+    color: rgb(var(--main-color));
+  }
+  35% {
+    color: rgb(var(--sub-color));
+  }
+  70% {
+    color: rgb(var(--pale-text-color));
+  }
+}
+
+.title {
+  padding-top: 0.5rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  span {
+    color: rgb(var(--main-color));
+  }
+}
+
+.description {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgb(var(--pale-text-color));
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.input-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-self: unset;
+  margin-top: 1rem;
+  padding: 0.7rem 0.5rem;
+  border: 1px solid rgb(var(--pale-gray-2));
+  border-radius: 0.5rem;
+  &:focus-within {
+    border-color: rgb(var(--main-color));
+  }
+}
+
+.send-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgb(var(--white));
+  background-color: rgb(var(--main-color));
+  border-radius: 0.5rem;
+}
+
+.error-text {
+  margin-top: -0.6rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgb(var(--red));
+}

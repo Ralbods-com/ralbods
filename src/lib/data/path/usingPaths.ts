@@ -1,0 +1,18 @@
+export const usingPaths = [
+  'create',
+  'terms',
+  'privacy',
+  'about',
+  'detail',
+  'guide',
+  'guideline',
+  'help',
+  'signup',
+  'login',
+  'users',
+  'topics',
+  'tags',
+  'notifications',
+  'templates',
+  'articles',
+];
