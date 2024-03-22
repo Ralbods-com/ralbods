@@ -1,14 +1,14 @@
-export const returnDiaryBgOGPColor = (mind: string) => {
+export const returnDiaryBgOGPColor = (mind: number) => {
   switch (mind) {
-    case 'maximum':
+    case 4:
       return 'rgb(255, 102, 102)';
-    case 'happy':
+    case 3:
       return 'rgb(255, 204, 51)';
-    case 'normal':
+    case 2:
       return 'rgb(242, 242, 242)';
-    case 'sad':
+    case 1:
       return 'rgb(54, 217, 191)';
-    case 'bad':
+    case 0:
       return 'rgb(0, 175, 204)';
     default:
       return 'rgb(var(--pale-gray))';

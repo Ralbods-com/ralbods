@@ -4,7 +4,7 @@ import { NextResponse } from 'next/server';
 export const GET = async () => {
   try {
     const diaries = await prisma.diary.findMany({
-      where: { userId: 'bb6ee393-f11e-44e7-b1db-f6aaf706a3e0' },
+      where: { userId: '0b3f8290-985f-4cc2-ac6d-ce2d314fab00' },
     });
     return NextResponse.json({ diaries }, { status: 200 });
   } catch (error) {

@@ -10,7 +10,7 @@ export type DiaryType = {
   publishedAt: string | null,
   updatedAt: string,
   userId: string,
-  mind: string,
+  mind: number,
   tags: TagApiType[],
 };
 
@@ -23,7 +23,7 @@ export type DiaryShowType = {
   publishedAt: string | null,
   updatedAt: string,
   userId: string,
-  mind: string,
+  mind: number,
   tags: TagApiType[],
   user: UserShowType,
 };

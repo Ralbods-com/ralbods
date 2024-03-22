@@ -3,7 +3,7 @@
 import UserHeader from '@/components/ui/button/header/user/UserHeader';
 import DiaryDetail from '@/components/diary/DiaryDetail';
 import { exampleDiaryData } from '@/lib/data/example/exampleData';
-import { getDiaryDetail } from '@/lib/function/diary/getDiary';
+// import { getDiaryDetail } from '@/lib/function/diary/getDiary';
 import { returnDiaryBgColor } from '@/lib/function/color/returnDiaryBgColor';
 import styles from './diaryPage.module.scss';
 
