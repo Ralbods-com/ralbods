@@ -2,12 +2,14 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { useAtom } from 'jotai';
 import { RxCross2 } from 'react-icons/rx';
 import { LuSend } from 'react-icons/lu';
 import { dateFormat } from '@/lib/function/DateFormat/dateFormat';
 import { postDiary } from '@/lib/function/diary/diary';
 import SelectMindBox from '@/components/mind/SelectMindBox';
 import { useSession } from 'next-auth/react';
+import { currentUserState } from '@/atoms/atoms';
 import modalStyles from '../modal.module.scss';
 import styles from './diaryModal.module.scss';
 
@@ -33,8 +35,9 @@ export default function SendDiaryModal({
   tags: string[];
   onClose: () => void;
 }) {
-  const [isSelectMind, setIsSelectMind] = useState(2);
+  const [currentUser, setCurrentUser] = useAtom(currentUserState);
   const router = useRouter();
+  const [isSelectMind, setIsSelectMind] = useState(2);
   const { data: session } = useSession();
   const userId: string = session?.user.id || '';
   const onSubmit = async (e: any) => {
@@ -46,7 +49,7 @@ export default function SendDiaryModal({
       // 今日の日付
       const today = dateFormat(now);
       await postDiary(today, title, body, isSelectMind, userId, tags);
-      router.push('/fwt');
+      router.push(`/${currentUser.uid}`);
       return postDiary;
     } catch (error) {
       return error;

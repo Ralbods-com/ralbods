@@ -5,6 +5,7 @@ import NextAuthProvider from '@/providers/NextAuth';
 import { authOptions } from '@/lib/auth';
 import 'react-calendar-heatmap/dist/styles.css';
 import { Provider } from 'jotai';
+import CurrentUserProvider from '@/middleware/CurrentUserProvider';
 
 export const metadata: Metadata = {
   title: 'Ralbods',
@@ -22,7 +23,9 @@ export default async function RootLayout({
     <html lang='ja'>
       <NextAuthProvider session={session}>
         <Provider>
-          {children}
+          <CurrentUserProvider>
+            {children}
+          </CurrentUserProvider>
         </Provider>
       </NextAuthProvider>
     </html>
