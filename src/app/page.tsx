@@ -11,7 +11,7 @@ import MainHeader from '@/components/header/MainHeader';
 import styles from './page.module.scss';
 
 export default async function Home() {
-  const session: any = await getServerSession(authOptions);
+  const session = await getServerSession(authOptions);
   console.log('aaaaaaaaaaaa');
   console.log(session);
   return (

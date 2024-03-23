@@ -20,7 +20,8 @@
     "jsxBracketSameLine:": "off",
     "@next/next/no-img-element": "off",
     "tno-plusplus": "off",
-    "@typescript-eslint/no-unused-vars": "warn"
+    "@typescript-eslint/no-unused-vars": "warn",
+    "no-param-reassign": "off"
   },
   "parserOptions": {
     "project": "./tsconfig.json"
