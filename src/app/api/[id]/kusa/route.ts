@@ -1,7 +1,9 @@
 import { prisma } from '@/lib/prisma';
 import { NextResponse } from 'next/server';
+import { useParams } from 'next/navigation';
 
-export const GET = async ({ params }: { params: { id: string } }) => {
+export const GET = async () => {
+  const params = useParams<{ id: string }>();
   try {
     const kusaData = await prisma.diary.findMany({
       where: { userId: params.id },
