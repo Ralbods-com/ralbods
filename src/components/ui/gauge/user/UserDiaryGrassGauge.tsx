@@ -3,6 +3,17 @@
 import ReactCalendarHeatmap from 'react-calendar-heatmap';
 import styles from './userGauge.module.scss';
 
+// const getKusaData = async (userId: string) => {
+//   try {
+//     const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/${userId}/kusa`, {
+//       method: 'GET',
+//     });
+//     return await res.json();
+//   } catch (error) {
+//     return error;
+//   }
+// };
+
 export default function UserDiaryGrassGauge() {
   return (
     <div className={styles['grass-gauge-box']}>

@@ -7,6 +7,7 @@ import { LuSend } from 'react-icons/lu';
 import { dateFormat } from '@/lib/function/DateFormat/dateFormat';
 import { postDiary } from '@/lib/function/diary/diary';
 import SelectMindBox from '@/components/mind/SelectMindBox';
+import { useSession } from 'next-auth/react';
 import modalStyles from '../modal.module.scss';
 import styles from './diaryModal.module.scss';
 
@@ -34,17 +35,18 @@ export default function SendDiaryModal({
 }) {
   const [isSelectMind, setIsSelectMind] = useState(2);
   const router = useRouter();
-
+  const { data: session } = useSession();
+  const userId: string = session?.user.id || '';
   const onSubmit = async (e: any) => {
     e.preventDefault();
-    const userId = await getUserId();
+    // const userId = await getUserId();
     try {
       // 現在時刻
       const now = new Date();
       // 今日の日付
       const today = dateFormat(now);
-      await postDiary(today, title, body, isSelectMind, '0b3f8290-985f-4cc2-ac6d-ce2d314fab00', tags);
-      router.push('/xx-n59');
+      await postDiary(today, title, body, isSelectMind, userId, tags);
+      router.push('/fwt');
       return postDiary;
     } catch (error) {
       return error;
