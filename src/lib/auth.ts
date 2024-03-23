@@ -1,12 +1,11 @@
-import NextAuth from 'next-auth';
+import NextAuth, { NextAuthOptions } from 'next-auth';
 import GithubProvider from 'next-auth/providers/github';
 import GoogleProvider from 'next-auth/providers/google';
-import type { NextAuthOptions } from 'next-auth';
 import { PrismaAdapter } from '@auth/prisma-adapter';
 import { prisma } from './prisma';
 
 export const authOptions: NextAuthOptions = {
-  adapter: PrismaAdapter(prisma),
+  adapter: PrismaAdapter(prisma) as any,
   debug: true,
   secret: process.env.NEXTAUTH_SECRET,
   providers: [
@@ -20,12 +19,7 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
   callbacks: {
-    async session({ session, user, token }) {
-      console.log('ああああああああああ');
-      console.log(user);
-      console.log(user.id);
-      console.log(session);
-      // console.log(session.user.id);
+    async session({ session, user, token }: any) {
       return session;
     },
   },
