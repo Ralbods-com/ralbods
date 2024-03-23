@@ -37,7 +37,7 @@ export default async function UserPage({
           <UserHeader userData={userData} />
           <div className={styles['user-contents-area']}>
             <div className={styles['user-grass-gauge-container']}>
-              <UserDiaryGrassGauge />
+              <UserDiaryGrassGauge userData={userData} />
             </div>
             <UserDetail userData={userData} />
           </div>
