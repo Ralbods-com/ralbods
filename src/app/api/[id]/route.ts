@@ -9,7 +9,11 @@ export const GET = async (
     const userDataByid = await prisma.user.findUnique({
       where: { id: params.id },
       include: {
-        Diaries: true,
+        Diaries: {
+          orderBy: {
+            id: 'desc',
+          },
+        },
       },
     });
     return NextResponse.json({ userDataByid }, { status: 201 });
