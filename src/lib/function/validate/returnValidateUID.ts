@@ -4,6 +4,8 @@ import { uidIsNotSignRegex, uidIsTextRegex } from '@/lib/regex/regex';
 export const returnValidateUID = (uid: string) => {
   if (uid.length <= 1) {
     return '2文字以上で入力してください';
+  } else if (uid.length > 15) {
+    return '15文字以下で入力してください';
   } else if (uidIsTextRegex.test(uid)) {
     return 'ユーザー名を数字のみにすることはできません';
   } else if (!uidIsNotSignRegex.test(uid)) {
