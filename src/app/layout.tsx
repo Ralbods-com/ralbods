@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.scss';
-import { getServerSession } from 'next-auth';
+import { getServerSession } from 'next-auth/next';
 import NextAuthProvider from '@/providers/NextAuth';
-// import { authOptions } from './api/auth/[...nextauth]/route';
 import { authOptions } from '@/lib/auth';
 import 'react-calendar-heatmap/dist/styles.css';
 import { Provider } from 'jotai';

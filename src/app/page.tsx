@@ -7,16 +7,16 @@ import { TbLayoutCollage, TbMarkdown } from 'react-icons/tb';
 import { FaToolbox } from 'react-icons/fa6';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
-import { postUserData } from '@/lib/function/user/postUserData';
+import MainHeader from '@/components/header/MainHeader';
 import styles from './page.module.scss';
 
 export default async function Home() {
   const session = await getServerSession(authOptions);
-  await postUserData(session?.user?.email || '', session?.user?.name || '');
-
+  console.log('aaaaaaaaaaaa');
+  console.log(session);
   return (
     <>
-      {/* <MainHeader session={session} /> */}
+      <MainHeader session={session} />
       <div className={styles['top-container']}>
         <div className={styles['top-logo']}>
           <SiRabbitmq />
