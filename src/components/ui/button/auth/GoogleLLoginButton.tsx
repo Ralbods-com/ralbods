@@ -2,7 +2,6 @@
 
 import { FcGoogle } from 'react-icons/fc';
 import { signIn } from 'next-auth/react';
-import { postUserData } from '@/lib/function/user/postUserData';
 import styles from './authButton.module.scss';
 
 export default function GoogleLoginButton() {
