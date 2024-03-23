@@ -7,12 +7,25 @@ import { exampleDiaryData } from '@/lib/data/example/exampleData';
 import { returnDiaryBgColor } from '@/lib/function/color/returnDiaryBgColor';
 import styles from './diaryPage.module.scss';
 
+const getDiaryDetail = async (diaryId: number) => {
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/diary/${diaryId}`, {
+      method: 'GET',
+    });
+    return await res.json();
+  } catch (error) {
+    return error;
+  }
+};
+
 export default async function DiaryShowPage({
   params,
 }: {
   params: { uid: string, diaryId: number }
 }) {
-  const diaryData = exampleDiaryData;
+  // const diaryData = exampleDiaryData;
+  const res = await getDiaryDetail(params.diaryId);
+  const diaryData = res.diaryDetail;
   const bgColor = returnDiaryBgColor(diaryData.mind);
   // const userId = String(params.uid);
   // const diaryId = Number(params.diaryId);
