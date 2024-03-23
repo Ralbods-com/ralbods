@@ -1,3 +1,15 @@
+@mixin btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgb(var(--white));
+  border-radius: 0.5rem;
+}
+
 .container {
   width: 100%;
   min-height: 100vh;
@@ -75,16 +87,14 @@
 }
 
 .send-button {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5rem 0.8rem;
-  font-size: 1rem;
-  font-weight: 600;
-  color: rgb(var(--white));
+  @include btn();
   background-color: rgb(var(--main-color));
-  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.send-disabled-button {
+  @include btn();
+  background-color: rgb(var(--pale-gray-2));
 }
 
 .error-text {
