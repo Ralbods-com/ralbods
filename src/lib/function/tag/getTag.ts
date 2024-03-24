@@ -1,6 +1,6 @@
 export const getAllTags = async () => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/tag`, {
+    const res = await fetch('/tag', {
       method: 'GET',
     });
     return await res.json();
