@@ -2,7 +2,7 @@ import { dateFormat } from '../DateFormat/dateFormat';
 
 export const getKusa = async () => {
   try {
-    const res = await fetch('/api/kusa', {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/kusa`, {
       method: 'GET',
     });
     const diaries = await res.json();

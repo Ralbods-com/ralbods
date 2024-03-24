@@ -10,7 +10,7 @@ import styles from './userPage.module.scss';
 
 const getDiary = async (id: string) => {
   try {
-    const res = await fetch(`/api/${id}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/${id}`, {
       method: 'GET',
     });
     return await res.json();
@@ -25,12 +25,16 @@ export default async function UserPage({
   params: { uid: String }
 }) {
   const session = await getServerSession(authOptions);
+  console.log('aaaaaaaaaaa');
+  console.log(session?.user.id);
   const uid = String(params.uid);
   if (session?.user) {
     const userId: string = session.user.id;
     // userIdを使用するコード
     const res = await getDiary(userId);
     const userData = res.userDataByid;
+    console.log('いいいいい');
+    console.log(userData);
     return (
       <div className={styles['screen']}>
         <div className={styles['container']}>

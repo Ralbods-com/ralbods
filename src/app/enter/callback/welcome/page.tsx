@@ -29,7 +29,7 @@ export default function EnterWellComePage() {
 
   const handleSubmit = async () => {
     setIsLoading(true);
-    await fetch('/api/user/uid', {
+    await fetch(`${process.env.NEXT_PUBLIC_URL}/user/uid`, {
       method: 'PATCH',
       body: JSON.stringify({ uid }),
     })

@@ -13,6 +13,8 @@ export default function UserHeader({
   userData: UserShowType,
 }) {
   const { data: session } = useSession();
+  console.log('ああああああああああ');
+  console.log(userData);
 
   return (
     <div className={styles['user-header']}>

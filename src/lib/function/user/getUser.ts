@@ -1,6 +1,6 @@
 export const getUser = async (id: string) => {
   try {
-    const res = await fetch(`/api/user/${id}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/user/${id}`, {
       method: 'GET',
     });
 
