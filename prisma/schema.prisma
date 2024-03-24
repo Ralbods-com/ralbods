@@ -61,7 +61,7 @@ model Diary {
   id          Int      @id @default(autoincrement())
   date        String
   title       String
-  body        String
+  body        String?
   mind        Int
   createdAt   DateTime @default(now()) @map("created_at")
   publishedAt DateTime
