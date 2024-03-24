@@ -38,8 +38,8 @@ export default function CreateDiaryFormHeader({
           <IoMdArrowBack />
         </div>
         <div className={styles['menu-button-container']}>
-          <div className={buttonStyle['white-button']}>下書きを保存</div>
-          {body.trim().length === 0 ? (
+          {/* <div className={buttonStyle['white-button']}>下書きを保存</div> */}
+          {(title.length === 0) ? (
             <div className={buttonStyle['main-disabled-button']}>公開</div>
           ) : (
             <div className={buttonStyle['main-color-button']} onClick={handleModal}>

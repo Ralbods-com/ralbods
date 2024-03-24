@@ -13,6 +13,9 @@ export const GET = async (
           orderBy: {
             id: 'desc',
           },
+          include: {
+            tags: true,
+          },
         },
       },
     });
