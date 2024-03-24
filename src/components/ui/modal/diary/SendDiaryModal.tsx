@@ -15,7 +15,7 @@ import styles from './diaryModal.module.scss';
 
 const getUserId = async () => {
   try {
-    const userData = await fetch('/user', {
+    const userData = await fetch('/api/user', {
       method: 'GET',
     });
     return await userData.json();

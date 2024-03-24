@@ -16,7 +16,7 @@ export const postDiary = async (
   tags: string[],
 ) => {
   try {
-    const res = await fetch(`${userId}/form/create`, {
+    const res = await fetch(`/api/${userId}/form/create`, {
       method: 'POST',
       body: JSON.stringify({
         date, title, body, mind, userId, tags,

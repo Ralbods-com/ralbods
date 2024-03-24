@@ -9,7 +9,7 @@ import styles from './diaryPage.module.scss';
 
 const getDiaryDetail = async (diaryId: number) => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/diary/${diaryId}`, {
+    const res = await fetch(`/api/diary/${diaryId}`, {
       method: 'GET',
     });
     return await res.json();
